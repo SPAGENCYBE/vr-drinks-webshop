@@ -13,14 +13,11 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     env:
       ONLINEFACT_API_KEY: ${{ secrets.ONLINEFACT_API_KEY }}
       ONLINEFACT_API_SECRET: ${{ secrets.ONLINEFACT_API_SECRET }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
@@ -31,8 +28,15 @@ jobs:
         continue-on-error: true
         run: node tools/sync-stock.mjs
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
