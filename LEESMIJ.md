@@ -40,3 +40,14 @@ De winkelwagen bewaart verkoopeenheden in de browser. Twee trays betekenen twee 
 De adressen, contactlinks en openingsuren staan in dist/index.html. Via #/ontdek opent de interactieve blikjescarrousel.
 
 De homepage gebruikt de transparante video en het eindbeeld uit vr-splash-video.zip. De animatie duurt 3,22 seconden, bevat 60 beelden per seconde en speelt op de aangeleverde snelheid. De webbestanden staan in dist/hero/splash-60.webm, splash-60-dark.mp4, splash-first.webp en splash-end.webp.
+
+## Koppeling met Onlinefact (automatisch)
+De webshop wordt elke 10 minuten automatisch opgebouwd uit Onlinefact (GitHub Actions, `.github/workflows/pages.yml`).
+
+- Elk artikel met **Webshop** aan in Onlinefact (niet end-of-life, prijs > 0) komt online. Nieuw artikel in Onlinefact = binnen ±10 minuten in de webshop. Webshop uit of end-of-life = offline.
+- Prijs, verpakking, categorie, merk, EU/BE (vlagje) en voorraad komen uit Onlinefact.
+- Foto's, smaakteksten en weergavenamen staan in `tools/enrichment.json`, per Onlinefact-referentie. Nieuw artikel zonder foto: eerst een foto uit Onlinefact (veld images), anders de foto van hetzelfde product in een andere verpakking, anders de tegel "Foto volgt".
+- Voorraad: zolang alles op 0 staat in Onlinefact, toont de webshop niets als uitverkocht.
+- API-sleutel: GitHub Secrets `ONLINEFACT_API_KEY` en `ONLINEFACT_API_SECRET`.
+- Overzicht van elke run (nieuwe artikelen, artikelen zonder foto): tabblad Actions in GitHub, samenvatting van de laatste run.
+- `dist/catalog.js` in de repo is een reservekopie; bij elke run wordt hij opnieuw opgebouwd.

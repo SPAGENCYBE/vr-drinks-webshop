@@ -22,11 +22,12 @@ const flagSvg={
  EU:'<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#003399"/>'+Array.from({length:12},(_,i)=>{const a=i*Math.PI/6,x=(1.5+.6*Math.sin(a)).toFixed(3),y=(1-.6*Math.cos(a)).toFixed(3);return '<circle cx="'+x+'" cy="'+y+'" r=".085" fill="#FFCC00"/>'}).join('')+'</svg>'};
 const originName={BE:'Belgische versie',EU:'Europese versie'};
 const flag=p=>p.origin&&flagSvg[p.origin]?'<span class="origin" title="'+originName[p.origin]+'">'+flagSvg[p.origin]+'<span class="sr">'+originName[p.origin]+'</span></span>':'';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function photo(p, miniature=false){
  const frame='photo '+(p.wrap||p.imageSource?'single-unit':'item-'+p.sourceId)+(miniature?' miniature':'');
  const content=p.image
    ? '<img src="'+p.image+'" alt="'+(miniature?'':nameOf(p))+'" loading="lazy">'
-   : '<span class="no-photo">'+(p.kind==='Waarborg'?'Leeggoed':miniature?'—':'Geen productfoto beschikbaar')+'</span>';
+   : '<span class="no-photo">'+(miniature?'<b>'+esc(p.brand).slice(0,2)+'</b>':'<b>'+esc(p.brand)+'</b><small>Foto volgt</small>')+'</span>';
  return '<div class="'+frame+'">'+content+flag(p)+'</div>';
 }
 const cartLink='<a class="primary" href="#/assortiment">Naar het assortiment</a>';
