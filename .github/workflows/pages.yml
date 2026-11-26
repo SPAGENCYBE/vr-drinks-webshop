@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: '*/10 * * * *'   # voorraad uit Onlinefact elke 10 minuten
   workflow_dispatch:
+    inputs:
+      dump:
+        description: 'Productlijst tonen in het logboek'
+        type: boolean
+        default: false
 permissions:
   contents: read
   pages: write
@@ -18,6 +23,7 @@ jobs:
     env:
       ONLINEFACT_API_KEY: ${{ secrets.ONLINEFACT_API_KEY }}
       ONLINEFACT_API_SECRET: ${{ secrets.ONLINEFACT_API_SECRET }}
+      ONLINEFACT_DUMP: ${{ inputs.dump && '1' || '0' }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v4

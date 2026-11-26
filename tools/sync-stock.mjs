@@ -46,6 +46,11 @@ const num = v => { const n = Number(String(v ?? '').replace(',', '.')); return N
 
 const catalog = loadCatalog();
 const products = await fetchProducts();
+if (process.env.ONLINEFACT_DUMP === '1') {
+  console.log('---DUMP---');
+  for (const p of products) console.log(['DUMP', p.product_id, p.reference, p.reference2 ?? '', p.barcode ?? '', p.description, p.categorie_id ?? '', p.price_incl, p.stock, p.managestock, p.webshop, p.endoflife].join('\t'));
+  console.log('---END---');
+}
 
 const index = new Map();
 for (const p of products) {
