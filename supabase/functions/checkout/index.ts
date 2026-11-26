@@ -5,6 +5,7 @@
 import { admin, catalog, cors, json, mollie, pushToOnlinefact, SITE_URL, env } from '../_shared/shop.ts';
 
 const euro = (c: number) => (c / 100).toFixed(2);
+const eur = (c: number) => '€ ' + (c / 100).toFixed(2).replace('.', ',');
 // Leeftijdsgrens per soort: bier/wijn/cava 16+, sterke drank en mixdranken 18+, alcoholvrij bier geen grens.
 const minAge = (it: any) => Number(it?.minAge ?? 0);
 const clean = (v: unknown, max = 200) => String(v ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
@@ -47,8 +48,8 @@ Deno.serve(async req => {
       }
     }
     const needAge = Math.max(0, ...wanted.map((w: any) => minAge(items.get(String(w.id)))));
-    if (needAge && Number(body.age_ok) < needAge) return json(req, { error: `Je winkelwagen bevat alcohol. Bevestig dat je ${needAge} jaar of ouder bent.` }, 400);
-    if (subtotal < settings.min_order) return json(req, { error: `Het minimum bestelbedrag is € ${euro(settings.min_order)} (exclusief leeggoed).` }, 400);
+    if (needAge && !(Number(body.age_ok) >= needAge)) return json(req, { error: `Je winkelwagen bevat alcohol. Bevestig dat je ${needAge} jaar of ouder bent.` }, 400);
+    if (subtotal < settings.min_order) return json(req, { error: `Het minimum bestelbedrag is ${eur(settings.min_order)} (exclusief leeggoed).` }, 400);
 
     // ---- Afhalen / leveren ----
     const fulfilment = body.fulfilment === 'leveren' ? 'leveren' : 'afhalen';
@@ -75,7 +76,7 @@ Deno.serve(async req => {
 
     // ---- Betaalmethode ----
     const payment = body.payment === 'factuur' ? 'factuur' : 'mollie';
-    if (payment === 'mollie' && !env('MOLLIE_API_KEY')) return json(req, { error: 'Online betalen is binnenkort beschikbaar. Kies afhalen en betaal in de winkel, of contacteer VR Drinks.' }, 503);
+    if (payment === 'mollie' && !env('MOLLIE_API_KEY')) return json(req, { error: 'Online betalen is binnenkort beschikbaar. Bestel intussen telefonisch via 0465 07 05 56 of info@vr-drinks.be.' }, 503);
     if (payment === 'factuur' && !profile.invoice_allowed) return json(req, { error: 'Betalen op factuur is enkel mogelijk voor goedgekeurde zakelijke klanten.' }, 403);
 
     const { data: order, error } = await db.from('orders').insert({
