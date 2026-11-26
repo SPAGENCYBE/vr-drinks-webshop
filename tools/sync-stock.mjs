@@ -48,21 +48,13 @@ const num = v => { const n = Number(String(v ?? '').replace(',', '.')); return N
 const catalog = loadCatalog();
 const products = await fetchProducts();
 if (process.env.ONLINEFACT_DUMP === '1') {
-  console.log('---DUMP---');
-  for (const p of products) console.log(['DUMP', p.product_id, p.reference, p.reference2 ?? '', p.barcode ?? '', p.description, p.categorie_id ?? '', p.price_incl, p.stock, p.managestock, p.webshop, p.endoflife].join('\t'));
-  const strip = o => Object.fromEntries(Object.entries(o).filter(([k]) => !/purchase|cost|supplier/i.test(k)));
-  console.log('KEYS\t' + JSON.stringify(Object.keys(products[0] || {})));
-  for (const p of products.slice(0, 2)) console.log('SAMPLE\t' + JSON.stringify(strip(p)));
-  const withImg = products.filter(p => Object.entries(p).some(([k, v]) => /image|img|photo|picture/i.test(k) && v));
-  console.log('IMAGES\t' + withImg.length);
+  const strip = o => Object.fromEntries(Object.entries(o).filter(([k]) => !/purchase|cost|supplier|ledger/i.test(k)));
+  for (const p of products) console.log('PJSON\t' + JSON.stringify(strip(p)));
+  const auth = 'Basic ' + Buffer.from(process.env.ONLINEFACT_API_KEY + ':' + process.env.ONLINEFACT_API_SECRET).toString('base64');
   for (const ep of ['categories', 'brands']) {
-    try {
-      const auth = 'Basic ' + Buffer.from(process.env.ONLINEFACT_API_KEY + ':' + process.env.ONLINEFACT_API_SECRET).toString('base64');
-      const r = await fetch(`${API}/${ep}/?limit=1000`, { headers: { Authorization: auth, Accept: 'application/json' } });
-      console.log(ep.toUpperCase() + '\t' + r.status + '\t' + (await r.text()).slice(0, 6000));
-    } catch (e) { console.log(ep + ' fout ' + e.message); }
+    const r = await fetch(`${API}/${ep}/?limit=1000`, { headers: { Authorization: auth, Accept: 'application/json' } });
+    console.log(ep.toUpperCase() + 'JSON\t' + (await r.text()));
   }
-  console.log('---END---');
 }
 
 const index = new Map();
