@@ -1,0 +1,23 @@
+<!doctype html><html lang="nl-BE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#171516"><meta name="description" content="Ontdek Coca-Cola, Fanta en Sprite in de interactieve drankenwinkel van VR Drinks."><title>VR Drinks — Drankenwinkel</title><link rel="icon" href="logo.svg"><link rel="stylesheet" href="style.css?v=shot6"><link rel="stylesheet" href="framing.css"><script defer src="catalog.js?v=shot5"></script><script defer src="app.js?v=splash8"></script><link rel="stylesheet" href="hero/landing.css?v=shot5"></head><body>
+<header><a class="logo" href="#/" aria-label="Startpagina van VR Drinks"><img src="logo.svg" alt="VR Drinks"></a><nav><a href="#/assortiment">Assortiment</a><a class="bag" href="#/winkelwagen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Zm5 0V6a3 3 0 0 1 6 0v2"/></svg><span>Winkelwagen</span><b id="count">0</b></a></nav></header>
+<main id="landing"><section class="vh" aria-labelledby="vh-title"><div class="wrap vh-grid">
+    <div class="vh-head">
+      <span class="vh-eyebrow">VR Drinks · Baasrode &amp; Overmere</span>
+      <h1 id="vh-title">Drank voor <span>elk moment.</span></h1>
+      <p class="vh-lead">Frisdrank, water, bier, wijn en meer per krat, tray of pak. Afhalen in onze winkels of laten leveren in de regio Dendermonde.</p>
+    </div>
+    <div class="vh-stage">
+      <div class="impact-stage" role="img" aria-label="Het VR Drinks-blik valt in roze frisdrank. De splash groeit rond het blik.">
+        <picture class="impact-cover"><source media="(prefers-reduced-motion: reduce)" srcset="hero/splash-end.webp"><img src="hero/splash-first.webp" alt="" fetchpriority="high"></picture>
+        <video class="impact-film" muted playsinline preload="none" poster="hero/splash-first.webp" aria-hidden="true"><source src="hero/splash-60.webm" type="video/webm"><source src="hero/splash-60-dark.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="vh-cta">
+      <div class="vh-btns"><a class="btn btn-red" href="#/assortiment">Shop dranken</a><a class="vh-link" href="#/assortiment/verhuur">Bekijk verhuur <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <button class="hours-jump" type="button">Adressen en openingsuren</button>
+    </div>
+  </div></section><section class="storesInfo" id="winkels" tabindex="-1" aria-labelledby="winkels-title"><h2 id="winkels-title">Onze winkels</h2><div class="storeGrid"><article><h3>Baasrode</h3><address><a href="https://maps.app.goo.gl/gFSGjQ3CrcZC4bJw8">Theodoor Vermijlenstraat 20 A/B<br>9200 Baasrode (Dendermonde)</a></address><dl><dt>Maandag – vrijdag</dt><dd>09.00–17.30</dd><dt>Zaterdag</dt><dd>09.00–16.30</dd><dt>Zon- en feestdagen</dt><dd>Gesloten</dd></dl></article><article><h3>Overmere</h3><address><a href="https://maps.app.goo.gl/TD7qUJ1bgkxwxqtZ9">Heikantstraat 39<br>9290 Overmere (Berlare)</a></address><dl><dt>Maandag – vrijdag</dt><dd>09.00–17.00</dd><dt>Zaterdag</dt><dd>09.00–17.00</dd><dt>Zon- en feestdagen</dt><dd>Gesloten</dd></dl></article></div><div class="contactLine"><a href="tel:+32465070556">0465 07 05 56</a><a href="mailto:info@vr-drinks.be">info@vr-drinks.be</a><a href="#/ontdek">Ontdek de dranken in 3D</a></div></section></main><main id="home" hidden><div id="stage" inert><div id="brandWall" aria-hidden="true">VR DRINKS</div><div id="fallback" aria-hidden="true"></div><canvas id="gl" aria-label="Interactieve blikjespresentatie"></canvas>
+<section id="hero" class="layer"><div class="heroCopy"><div class="eyebrow"><i></i><span id="type"></span></div><h2 id="title"></h2><p id="taste"></p><div class="actions"><a class="primary" id="productLink">Bekijk product</a><a class="secondary" href="#/assortiment">Alle dranken</a></div></div><div class="arrows"><button id="prev" aria-label="Vorig product">‹</button><button id="next" aria-label="Volgend product">›</button></div><div class="rail" id="rail" aria-label="Kies een drank"></div></section>
+<section id="story" class="layer" hidden><div class="storyCopy"><div class="eyebrow" id="storyProduct"></div><h2 id="storyTitle"></h2><p id="storyText"></p><div id="steps"></div></div></section>
+<section id="end" class="layer" hidden><div><h2>Het assortiment</h2><a class="primary" href="#/assortiment">Bekijk alle dranken</a></div></section></div><div id="track"></div></main>
+<main id="shop" hidden></main><p class="sr" role="status" id="status"></p></body></html>
