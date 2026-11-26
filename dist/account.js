@@ -248,14 +248,16 @@
     const how = o.fulfilment === 'afhalen'
       ? `Afhalen in ${esc((settings?.pickup_stores ?? []).find(s => s.id === o.store)?.name ?? o.store)}`
       : `Levering: ${esc(o.delivery?.street)}, ${esc(o.delivery?.zip)} ${esc(o.delivery?.city)}`;
-    setShop(`<h1>${ok ? 'Bedankt voor je bestelling!' : o.status === 'wacht_op_betaling' ? 'Betaling wordt gecontroleerd…' : 'Bestelling ' + esc(o.number)}</h1>
+    const waiting = o.status === 'wacht_op_betaling', giveUp = waiting && tries >= 6;
+    setShop(`<h1>${ok ? 'Bedankt voor je bestelling!' : giveUp ? 'Je betaling is nog niet afgerond' : waiting ? 'Betaling wordt gecontroleerd…' : 'Bestelling ' + esc(o.number)}</h1>
       <p class="lead">Bestelling <strong>${esc(o.number)}</strong> · ${esc(STATUS[o.status] ?? o.status)}</p>
       <p>${how}${o.wanted_date ? ' · ' + new Date(o.wanted_date).toLocaleDateString('nl-BE', { weekday: 'long', day: 'numeric', month: 'long' }) : ''}</p>
       <table class="lines"><tbody>${(o.lines ?? []).map(l => `<tr><td>${l.qty} ×</td><td>${esc(l.description)}</td><td>${money(l.total)}</td></tr>`).join('')}</tbody>
       <tfoot><tr><td></td><td>Totaal</td><td>${money(o.total)}</td></tr></tfoot></table>
+      ${giveUp ? `<p class="note">Je bestelling is bewaard, maar nog niet betaald. Je winkelwagen staat nog klaar.</p><p class="actions">${o.checkout_url ? `<a class="primary" href="${esc(o.checkout_url)}">Verder betalen</a>` : ''}<a class="under" href="#/winkelwagen">Naar de winkelwagen</a></p>` : ''}
       ${['mislukt', 'geannuleerd', 'verlopen'].includes(o.status) ? '<p><a class="primary" href="#/afrekenen">Opnieuw proberen</a></p>' : ''}
       <p><a class="under" href="#/account">Al mijn bestellingen</a></p>`);
-    if (o.status === 'wacht_op_betaling' && tries < 10) setTimeout(() => { if (location.hash === '#/bestelling/' + id) orderView(id, tries + 1); }, 2000);
+    if (waiting && tries < 6) setTimeout(() => { if (location.hash === '#/bestelling/' + id) orderView(id, tries + 1); }, 2000);
   }
 
   // ---------- Koppeling met de router van app.js ----------

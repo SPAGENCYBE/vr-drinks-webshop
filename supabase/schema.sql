@@ -75,7 +75,8 @@ create table if not exists public.orders (
   created_at timestamptz not null default now(),
   paid_at timestamptz
 );
-alter table public.orders add column if not exists age_confirmed_for integer;  -- 16 of 18: klant bevestigde die leeftijd bij deze bestelling
+alter table public.orders add column if not exists age_confirmed_for integer;
+alter table public.orders add column if not exists checkout_url text;  -- Mollie-betaalpagina, om een onderbroken betaling te hervatten  -- 16 of 18: klant bevestigde die leeftijd bij deze bestelling
 create index if not exists orders_user_idx on public.orders (user_id, created_at desc);
 alter table public.orders enable row level security;
 drop policy if exists "eigen bestellingen lezen" on public.orders;

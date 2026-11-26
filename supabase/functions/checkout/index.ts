@@ -100,7 +100,7 @@ Deno.serve(async req => {
       metadata: { order_id: order.id },
       locale: 'nl_BE',
     }) });
-    await db.from('orders').update({ mollie_payment_id: pay.id }).eq('id', order.id);
+    await db.from('orders').update({ mollie_payment_id: pay.id, checkout_url: pay._links.checkout.href }).eq('id', order.id);
     return json(req, { orderId: order.id, number: order.number, checkoutUrl: pay._links.checkout.href });
   } catch (e) {
     console.error(e);
