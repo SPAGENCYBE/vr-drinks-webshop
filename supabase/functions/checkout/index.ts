@@ -72,6 +72,7 @@ Deno.serve(async req => {
 
     // ---- Betaalmethode ----
     const payment = body.payment === 'factuur' ? 'factuur' : 'mollie';
+    if (payment === 'mollie' && !env('MOLLIE_API_KEY')) return json(req, { error: 'Online betalen is binnenkort beschikbaar. Kies afhalen en betaal in de winkel, of contacteer VR Drinks.' }, 503);
     if (payment === 'factuur' && !profile.invoice_allowed) return json(req, { error: 'Betalen op factuur is enkel mogelijk voor goedgekeurde zakelijke klanten.' }, 403);
 
     const { data: order, error } = await db.from('orders').insert({
