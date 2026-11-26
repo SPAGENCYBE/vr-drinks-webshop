@@ -31,7 +31,7 @@ create policy "eigen profiel aanpassen" on public.profiles for update to authent
 -- Klanten mogen alleen hun eigen gegevens aanpassen, niet de goedkeuring voor factuur of de Onlinefact-koppeling.
 revoke insert, update, delete on public.profiles from anon, authenticated;
 grant select on public.profiles to authenticated;
-grant update (first_name, last_name, company, vat, phone, street, zip, city, country, updated_at) on public.profiles to authenticated;
+grant update (first_name, last_name, company, vat, phone, street, zip, city, country, age_confirmed, updated_at) on public.profiles to authenticated;
 
 create or replace function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = '' as $$

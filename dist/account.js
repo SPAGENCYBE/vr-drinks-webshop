@@ -130,6 +130,7 @@
           <label class="field">Straat en nummer<input name="street" autocomplete="street-address" value="${esc(p.street)}"></label>
           <div class="row2"><label class="field">Postcode<input name="zip" inputmode="numeric" autocomplete="postal-code" value="${esc(p.zip)}"></label>
           <label class="field">Gemeente<input name="city" autocomplete="address-level2" value="${esc(p.city)}"></label></div>
+          ${p.age_confirmed ? '' : '<label class="check"><input type="checkbox" name="age" required> Ik ben 18 jaar of ouder (nodig om te bestellen).</label>'}
           <button class="primary">Opslaan</button><p class="formmsg" role="status"></p>
           ${p.invoice_allowed ? '<p class="note">Je account is goedgekeurd om op factuur te betalen.</p>' : ''}
         </form></section>
@@ -138,7 +139,9 @@
     $('logout').onclick = async () => { await sb.auth.signOut(); location.hash = '#/'; };
     $('profForm').onsubmit = async e => {
       e.preventDefault(); const f = e.target, out = f.querySelector('.formmsg');
+      if (!f.checkValidity()) { f.reportValidity(); return; }
       const upd = Object.fromEntries(['first_name', 'last_name', 'phone', 'company', 'vat', 'street', 'zip', 'city'].map(k => [k, fieldVal(f, k) || null]));
+      if (f.age?.checked) upd.age_confirmed = true;
       upd.updated_at = new Date().toISOString();
       const { error } = await sb.from('profiles').update(upd).eq('id', session.user.id);
       if (error) return msg(out, 'Opslaan lukte niet.');
@@ -162,6 +165,7 @@
     const s = await loadSettings();
     if (!s) { setShop('<h1>Afrekenen</h1><p class="formmsg err">Afrekenen is tijdelijk niet beschikbaar. Probeer het later opnieuw.</p>'); return; }
     if (!session.user.email_confirmed_at) { setShop('<h1>Afrekenen</h1><p class="lead">Bevestig eerst je e-mailadres via de link in je mailbox.</p>'); return; }
+    if (!profile?.age_confirmed) { setShop('<h1>Afrekenen</h1><p class="lead">Om te bestellen moet je bevestigen dat je 18 jaar of ouder bent.</p><a class="primary" href="#/account">Naar mijn account</a>'); return; }
     const p = profile ?? {};
     const sub = cart.reduce((t, r) => t + priceOf(r) * r.qty, 0);
     const dep = cart.reduce((t, r) => t + depositOf(r), 0);
