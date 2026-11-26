@@ -245,7 +245,7 @@ function tick(now){frame=0;if(!home||document.hidden)return;const dt=Math.min(.0
 }
 function start(){if(!frame&&!document.hidden){previous=performance.now();frame=requestAnimationFrame(tick)}}
 document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0}else if(home)start()});
-buildCatbar();window.addEventListener('hashchange',route);heroText(0,0);updateCount();route();
+buildCatbar();if($('footYear'))$('footYear').textContent=new Date().getFullYear();window.addEventListener('hashchange',route);heroText(0,0);updateCount();route();
 async function loadStock(){try{const r=await fetch('stock.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const data=await r.json();
  for(const p of catalog){const it=data.items&&data.items[p.id];if(!it||!it.managestock)continue;p.stock=it.stock;p.available=it.stock>0}
  cart=cart.filter(r=>byId(r.id)&&byId(r.id).available);cart.forEach(r=>{const m=maxOf(byId(r.id));if(r.qty>m)r.qty=m});saveCart();
