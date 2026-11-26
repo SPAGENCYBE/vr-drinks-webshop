@@ -2,7 +2,7 @@ const root=window.VR_HERO_EL;
 const film=root.querySelector('.impact-film');
 const poster=root.querySelector('.impact-cover img');
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
-const dark=new URL('./splash-60-dark.mp4',import.meta.url).href;
+const dark=new URL('./splash-fall-dark.mp4',import.meta.url).href;
 let visible=false,checked=false,failed=false;
 
 function sync(){

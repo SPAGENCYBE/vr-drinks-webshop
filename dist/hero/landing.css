@@ -17,7 +17,7 @@
 .vh-facts li{display:flex;align-items:center;gap:7px}.vh-facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:#ED1B24}
 .vh :focus-visible{outline:2px solid #fff;outline-offset:3px}
 .vh-stage{grid-area:stage;position:relative;height:clamp(236px,calc(100svh - 480px),440px);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));overflow:hidden;pointer-events:none}
-.impact-stage{position:absolute;inset:0;margin:auto;width:100%;height:auto;aspect-ratio:16/9;max-height:100%;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent),linear-gradient(#000 93%,transparent);mask-composite:intersect}
+.impact-stage{position:absolute;inset:0;margin:auto;width:100%;height:auto;aspect-ratio:16/9;max-height:100%;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent),linear-gradient(transparent,#000 12%,#000 93%,transparent);mask-composite:intersect}
 .impact-canvas{display:block;width:100%;height:100%;position:absolute;inset:0;opacity:0}
 .studio-ready .impact-canvas{opacity:1}
 @media (min-width:900px){
