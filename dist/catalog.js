@@ -1,4 +1,4 @@
-// Automatisch opgebouwd uit Onlinefact op 2026-11-26T10:44:57.240Z. Niet met de hand aanpassen: zie tools/sync-stock.mjs en tools/enrichment.json.
+// Automatisch opgebouwd uit Onlinefact op 2026-11-26T11:54:03.462Z. Niet met de hand aanpassen: zie tools/sync-stock.mjs en tools/enrichment.json.
 window.catalog = [
  {
   "id": "coca-cola-original",
@@ -20,6 +20,7 @@ window.catalog = [
   "sku": "01010010124033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "art/original.png",
   "sourceId": 2144,
   "taste": "De klassieke smaak van Coca-Cola, met fijne bubbels.",
@@ -50,6 +51,7 @@ window.catalog = [
   "sku": "01010010224033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "art/zero.png",
   "sourceId": 2138,
   "taste": "De herkenbare smaak van Coca-Cola Zero Sugar.",
@@ -80,6 +82,7 @@ window.catalog = [
   "sku": "01010010324033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2141.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Coca-Cola-Cherry-330ml-1.jpg",
   "sourceId": 2141,
@@ -105,6 +108,7 @@ window.catalog = [
   "sku": "01010010424033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2136.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-vanilla-blik33cl-goedkoopdrank-1.jpg",
   "sourceId": 2136,
@@ -129,7 +133,8 @@ window.catalog = [
   "available": true,
   "sku": "01010010524033",
   "tax": 6,
-  "origin": "EU"
+  "origin": "EU",
+  "minAge": 0
  },
  {
   "id": "coca-cola-zero-caffeine-01010010606033",
@@ -151,6 +156,7 @@ window.catalog = [
   "sku": "01010010606033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/3333.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2023/11/052044VIGNETTES.jpg",
   "sourceId": 3333,
@@ -176,6 +182,7 @@ window.catalog = [
   "sku": "01010010624033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/3333.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2023/11/052044VIGNETTES.jpg",
   "sourceId": 3333,
@@ -201,6 +208,7 @@ window.catalog = [
   "sku": "01010015124033",
   "tax": 6,
   "origin": "BE",
+  "minAge": 0,
   "image": "art/original.png",
   "sourceId": 2144,
   "taste": "De klassieke smaak van Coca-Cola, met fijne bubbels.",
@@ -227,6 +235,7 @@ window.catalog = [
   "sku": "01010015130033",
   "tax": 6,
   "origin": "BE",
+  "minAge": 0,
   "image": "art/original.png",
   "sourceId": 2144,
   "taste": "De klassieke smaak van Coca-Cola, met fijne bubbels.",
@@ -253,6 +262,7 @@ window.catalog = [
   "sku": "01010015224033",
   "tax": 6,
   "origin": "BE",
+  "minAge": 0,
   "image": "art/zero.png",
   "sourceId": 2138,
   "taste": "De herkenbare smaak van Coca-Cola Zero Sugar.",
@@ -279,6 +289,7 @@ window.catalog = [
   "sku": "01010015230033",
   "tax": 6,
   "origin": "BE",
+  "minAge": 0,
   "image": "art/zero.png",
   "sourceId": 2138,
   "taste": "De herkenbare smaak van Coca-Cola Zero Sugar.",
@@ -304,7 +315,8 @@ window.catalog = [
   "available": true,
   "sku": "01010019024033",
   "tax": 6,
-  "origin": "EU"
+  "origin": "EU",
+  "minAge": 0
  },
  {
   "id": "fanta-orange",
@@ -326,6 +338,7 @@ window.catalog = [
   "sku": "01010020124033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "art/fanta-330ml.png",
   "sourceId": 2135,
   "taste": "Sprankelende frisdrank met sinaasappelsmaak.",
@@ -355,7 +368,8 @@ window.catalog = [
   "available": true,
   "sku": "01010020224033",
   "tax": 6,
-  "origin": "EU"
+  "origin": "EU",
+  "minAge": 0
  },
  {
   "id": "vr-2146",
@@ -377,6 +391,7 @@ window.catalog = [
   "sku": "01010020324033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2146.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/408a2b4f-f018-11ee-9b69-02cc60c61b69.jpg?v=1791228533",
   "sourceId": 2146,
@@ -402,6 +417,7 @@ window.catalog = [
   "sku": "01010020424033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2150.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/fanta-exotic-blik33cl-goedkoopdrank.jpg",
   "sourceId": 2150,
@@ -427,6 +443,7 @@ window.catalog = [
   "sku": "01010020524033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2154.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/fanta-strawberry-kiwi-blik33cl-goedkoopdrank.jpg",
   "sourceId": 2154,
@@ -452,6 +469,7 @@ window.catalog = [
   "sku": "01010029024033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2918.webp",
   "imageSource": "https://www.coca-cola.com/nl/nl/brands/fanta",
   "sourceId": 2918,
@@ -478,6 +496,7 @@ window.catalog = [
   "sku": "01010030124033",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "art/sprite-330ml.png",
   "sourceId": 2271,
   "taste": "Een frisse combinatie van citroen en limoen.",
@@ -507,6 +526,7 @@ window.catalog = [
   "available": true,
   "sku": "01010040124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2244.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/9003b92e93cfa2d7c8a0cb3905dc3e18.jpg?v=1791228414",
   "sourceId": 2244,
@@ -531,6 +551,7 @@ window.catalog = [
   "available": true,
   "sku": "01010040224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2254.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/e6e0a89807321212338f2380734f428f.jpg?v=1791228669",
   "sourceId": 2254,
@@ -555,6 +576,7 @@ window.catalog = [
   "available": true,
   "sku": "01010040324033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2240.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/e37c9540fd2af3e439b1fb7bd035ee19.jpg?v=1791228476",
   "sourceId": 2240,
@@ -579,6 +601,7 @@ window.catalog = [
   "available": true,
   "sku": "01010040424033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2248.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/2f0d06c63823ddce08e60fab847c721f.jpg?v=1791228469",
   "sourceId": 2248,
@@ -603,6 +626,7 @@ window.catalog = [
   "available": true,
   "sku": "01010050106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2246.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/12/717_6297.jpg",
   "sourceId": 2246,
@@ -627,6 +651,7 @@ window.catalog = [
   "available": true,
   "sku": "01010050124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2246.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/12/717_6297.jpg",
   "sourceId": 2246,
@@ -651,6 +676,7 @@ window.catalog = [
   "available": true,
   "sku": "01010050206033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2276.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/96796416.jpg",
   "sourceId": 2276,
@@ -675,6 +701,7 @@ window.catalog = [
   "available": true,
   "sku": "01010050224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2276.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/96796416.jpg",
   "sourceId": 2276,
@@ -699,6 +726,7 @@ window.catalog = [
   "available": true,
   "sku": "01010050306033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2264.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/11/pepsi.jpg",
   "sourceId": 2264,
@@ -723,6 +751,7 @@ window.catalog = [
   "available": true,
   "sku": "01010050324033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2264.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/11/pepsi.jpg",
   "sourceId": 2264,
@@ -747,6 +776,7 @@ window.catalog = [
   "available": true,
   "sku": "01010060106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2273.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2017/01/7-up-blik33cl-goedkoopdrank.jpg",
   "sourceId": 2273,
@@ -771,6 +801,7 @@ window.catalog = [
   "available": true,
   "sku": "01010060124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2273.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2017/01/7-up-blik33cl-goedkoopdrank.jpg",
   "sourceId": 2273,
@@ -795,6 +826,7 @@ window.catalog = [
   "available": true,
   "sku": "01010060206033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2252.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/7_up_free_zero_sugar_blikjes_33cl_tray-228x228-1.jpg",
   "sourceId": 2252,
@@ -819,6 +851,7 @@ window.catalog = [
   "available": true,
   "sku": "01010060224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2252.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/7_up_free_zero_sugar_blikjes_33cl_tray-228x228-1.jpg",
   "sourceId": 2252,
@@ -843,6 +876,7 @@ window.catalog = [
   "available": true,
   "sku": "01010070124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2269.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/ca2cfd92-a1e0-11ef-9e54-02cc60c61b69.jpg?v=1791228534",
   "sourceId": 2269,
@@ -867,6 +901,7 @@ window.catalog = [
   "available": true,
   "sku": "01010080108033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2267.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/schweppes_indian_tonic_blikjes_tray_33cl-228x228-1.jpg",
   "sourceId": 2267,
@@ -891,6 +926,7 @@ window.catalog = [
   "available": true,
   "sku": "01010080124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2267.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/schweppes_indian_tonic_blikjes_tray_33cl-228x228-1.jpg",
   "sourceId": 2267,
@@ -915,6 +951,7 @@ window.catalog = [
   "available": true,
   "sku": "01010080208033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2256.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/03b1d33604941f396fa71fa9f477aa3b.jpg?v=1791228411",
   "sourceId": 2256,
@@ -939,6 +976,7 @@ window.catalog = [
   "available": true,
   "sku": "01010080224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2256.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/03b1d33604941f396fa71fa9f477aa3b.jpg?v=1791228411",
   "sourceId": 2256,
@@ -963,6 +1001,7 @@ window.catalog = [
   "available": true,
   "sku": "01010080308033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2410.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/08/schweppes-agrumes-zero_fr.png",
   "sourceId": 2410,
@@ -987,6 +1026,7 @@ window.catalog = [
   "available": true,
   "sku": "01010080324033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2410.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/08/schweppes-agrumes-zero_fr.png",
   "sourceId": 2410,
@@ -1010,7 +1050,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010080424033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "schweppes-lemon-01010080524033",
@@ -1030,7 +1071,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010080524033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "schweppes-bitter-lemon-01010080624033",
@@ -1050,7 +1092,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010080624033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "schweppes-wild-berry-01010080724033",
@@ -1070,7 +1113,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010080724033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "schweppes-twister-01010089024033",
@@ -1090,7 +1134,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010089024033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "gini-01010090106033",
@@ -1111,6 +1156,7 @@ window.catalog = [
   "available": true,
   "sku": "01010090106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2258.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/d60d09213f1752cfc2481e6734e94ef4.jpg?v=1791228467",
   "sourceId": 2258,
@@ -1135,6 +1181,7 @@ window.catalog = [
   "available": true,
   "sku": "01010090124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2258.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/d60d09213f1752cfc2481e6734e94ef4.jpg?v=1791228467",
   "sourceId": 2258,
@@ -1158,7 +1205,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010090206033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "gini-lemon-zero-01010090224033",
@@ -1178,7 +1226,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01010090224033",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "tropico-original-01010100106033",
@@ -1199,6 +1248,7 @@ window.catalog = [
   "available": true,
   "sku": "01010100106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2507.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/tropico_l_original.png",
   "sourceId": 2507,
@@ -1223,6 +1273,7 @@ window.catalog = [
   "available": true,
   "sku": "01010100124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2507.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/tropico_l_original.png",
   "sourceId": 2507,
@@ -1247,6 +1298,7 @@ window.catalog = [
   "available": true,
   "sku": "01010110106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2151.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/0fac97c0-190a-11ef-9b69-02cc60c61b69.jpg?v=1730731770",
   "sourceId": 2151,
@@ -1271,6 +1323,7 @@ window.catalog = [
   "available": true,
   "sku": "01010110124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2151.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/0fac97c0-190a-11ef-9b69-02cc60c61b69.jpg?v=1730731770",
   "sourceId": 2151,
@@ -1295,6 +1348,7 @@ window.catalog = [
   "available": true,
   "sku": "01010110206033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2152.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/f50913bb-1909-11ef-9b69-02cc60c61b69.jpg?v=1730732334",
   "sourceId": 2152,
@@ -1319,6 +1373,7 @@ window.catalog = [
   "available": true,
   "sku": "01010110224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2152.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/f50913bb-1909-11ef-9b69-02cc60c61b69.jpg?v=1730732334",
   "sourceId": 2152,
@@ -1343,6 +1398,7 @@ window.catalog = [
   "available": true,
   "sku": "01010150124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2505.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/oasis-tropical.jpg",
   "sourceId": 2505,
@@ -1367,6 +1423,7 @@ window.catalog = [
   "available": true,
   "sku": "01010160106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2504.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/oragina.jpg2_.jpg",
   "sourceId": 2504,
@@ -1391,6 +1448,7 @@ window.catalog = [
   "available": true,
   "sku": "01010160124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2504.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/oragina.jpg2_.jpg",
   "sourceId": 2504,
@@ -1415,6 +1473,7 @@ window.catalog = [
   "available": true,
   "sku": "01010510104033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3073.webp",
   "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/OranSoda-Blik.webp",
   "sourceId": 3073,
@@ -1439,6 +1498,7 @@ window.catalog = [
   "available": true,
   "sku": "01010510124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3073.webp",
   "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/OranSoda-Blik.webp",
   "sourceId": 3073,
@@ -1463,6 +1523,7 @@ window.catalog = [
   "available": true,
   "sku": "01010510204033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3074.webp",
   "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/LemonSoda-Blik.webp",
   "sourceId": 3074,
@@ -1487,6 +1548,7 @@ window.catalog = [
   "available": true,
   "sku": "01010510224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3074.webp",
   "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/LemonSoda-Blik.webp",
   "sourceId": 3074,
@@ -1511,6 +1573,7 @@ window.catalog = [
   "available": true,
   "sku": "01010510304033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3075.webp",
   "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/LemonSoda-Mojito-Blik.webp",
   "sourceId": 3075,
@@ -1535,6 +1598,7 @@ window.catalog = [
   "available": true,
   "sku": "01010510324033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3075.webp",
   "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/LemonSoda-Mojito-Blik.webp",
   "sourceId": 3075,
@@ -1560,6 +1624,7 @@ window.catalog = [
   "sku": "01020010106150",
   "tax": 6,
   "origin": "BE",
+  "minAge": 0,
   "image": "single/2957.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/6237e367-1908-11ef-9b69-02cc60c61b69.jpg?v=1730734672",
   "sourceId": 2957,
@@ -1585,6 +1650,7 @@ window.catalog = [
   "sku": "01020010109150",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2957.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/6237e367-1908-11ef-9b69-02cc60c61b69.jpg?v=1730734672",
   "sourceId": 2957,
@@ -1610,6 +1676,7 @@ window.catalog = [
   "sku": "01020010112050",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2645.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/63eb0e9b-1908-11ef-9b69-02cc60c61b69.jpg?v=1730739182",
   "sourceId": 2645,
@@ -1635,6 +1702,7 @@ window.catalog = [
   "sku": "01020010118150",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2645.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/63eb0e9b-1908-11ef-9b69-02cc60c61b69.jpg?v=1730739182",
   "sourceId": 2645,
@@ -1660,6 +1728,7 @@ window.catalog = [
   "sku": "01020010206150",
   "tax": 6,
   "origin": "BE",
+  "minAge": 0,
   "image": "single/2955.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg",
   "sourceId": 2955,
@@ -1685,6 +1754,7 @@ window.catalog = [
   "sku": "01020010208150",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2955.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg",
   "sourceId": 2955,
@@ -1710,6 +1780,7 @@ window.catalog = [
   "sku": "01020010209150",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2955.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg",
   "sourceId": 2955,
@@ -1735,6 +1806,7 @@ window.catalog = [
   "sku": "01020010212050",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2250.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-ZERO-PET-50cll-goedkoopdrank.jpg",
   "sourceId": 2250,
@@ -1760,6 +1832,7 @@ window.catalog = [
   "sku": "01020010218150",
   "tax": 6,
   "origin": "EU",
+  "minAge": 0,
   "image": "single/2250.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-ZERO-PET-50cll-goedkoopdrank.jpg",
   "sourceId": 2250,
@@ -1784,6 +1857,7 @@ window.catalog = [
   "available": true,
   "sku": "01020020112050",
   "tax": 6,
+  "minAge": 0,
   "image": "art/fanta-330ml.png",
   "sourceId": 2135
  },
@@ -1806,6 +1880,7 @@ window.catalog = [
   "available": true,
   "sku": "01020050206150",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2877.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/351c5613-1909-11ef-9b69-02cc60c61b69.jpg?v=1730740444",
   "sourceId": 2877,
@@ -1830,6 +1905,7 @@ window.catalog = [
   "available": true,
   "sku": "01020070124040",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2269.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/ca2cfd92-a1e0-11ef-9e54-02cc60c61b69.jpg?v=1791228534",
   "sourceId": 2269
@@ -1853,6 +1929,7 @@ window.catalog = [
   "available": true,
   "sku": "01020120110020",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2395.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/10230582509598.jpg",
   "sourceId": 2395,
@@ -1877,6 +1954,7 @@ window.catalog = [
   "available": true,
   "sku": "01020120210020",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2298.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/9331.jpg",
   "sourceId": 2298,
@@ -1900,7 +1978,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "01020120310020",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2872",
@@ -1927,6 +2006,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2872.webp",
   "imageSource": "https://drankenhandel-verreydt.drinxit.be/images/thumbs/0007884_coca-cola-1l-glas_360.jpg",
   "sourceId": 2872,
@@ -1957,6 +2037,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2732.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/6162ef0c-1908-11ef-9b69-02cc60c61b69.jpg?v=1730739166",
   "sourceId": 2732,
@@ -1987,6 +2068,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2873.webp",
   "imageSource": "https://drankenhandel-verreydt.drinxit.be/images/thumbs/0007927_coca-cola-zero-1l-glas_360.jpg",
   "sourceId": 2873,
@@ -2017,6 +2099,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2733.webp",
   "imageSource": "https://drankenhandel-verreydt.drinxit.be/images/thumbs/0007932_coca-cola-zero-20cl-glas_360.jpg",
   "sourceId": 2733,
@@ -2047,6 +2130,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2736.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/84cd2efe-1908-11ef-9b69-02cc60c61b69.jpg?v=1730735949",
   "sourceId": 2736,
@@ -2077,6 +2161,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2915.webp",
   "imageSource": "https://drankenhandel-verreydt.drinxit.be/images/thumbs/0006272_LIPTON-ICE-TEA-25CL-BRUIS-FLES_360.png",
   "sourceId": 2915,
@@ -2107,6 +2192,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2301.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/02/15-1111x788.png",
   "sourceId": 2301,
@@ -2137,6 +2223,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2587.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/02/16-1111x788.png",
   "sourceId": 2587,
@@ -2161,6 +2248,7 @@ window.catalog = [
   "available": true,
   "sku": "02010180104025",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2119.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Red-bullk-blik-25cl-goedkoopdrank.jpg",
   "sourceId": 2119
@@ -2184,6 +2272,7 @@ window.catalog = [
   "available": true,
   "sku": "02010180124025",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2119.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Red-bullk-blik-25cl-goedkoopdrank.jpg",
   "sourceId": 2119,
@@ -2208,6 +2297,7 @@ window.catalog = [
   "available": true,
   "sku": "02010180224025",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2122.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2026/03/red-bull-sugar-free.webp",
   "sourceId": 2122,
@@ -2231,7 +2321,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010181124025",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "redbull-the-white-edition-02010181224025",
@@ -2251,7 +2342,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010181224025",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "monster-energy-original-02010190112050",
@@ -2272,6 +2364,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190112050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2114.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/b66b4956-e22e-4024-b0e0-302e44d93e3c.png",
   "sourceId": 2114,
@@ -2296,6 +2389,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2114.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/b66b4956-e22e-4024-b0e0-302e44d93e3c.png",
   "sourceId": 2114,
@@ -2320,6 +2414,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190212050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2360.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/09f29012-5632-40f6-83c1-a08e9f6ae794.png",
   "sourceId": 2360,
@@ -2344,6 +2439,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190224050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2360.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/09f29012-5632-40f6-83c1-a08e9f6ae794.png",
   "sourceId": 2360,
@@ -2367,7 +2463,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010190324050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2117",
@@ -2388,6 +2485,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190424050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2117.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/9cec895b-9700-4803-a5f9-88f58fec2013.png",
   "sourceId": 2117,
@@ -2411,7 +2509,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010190524050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2510",
@@ -2432,6 +2531,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190624050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2510.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/c6dec565-3e6c-41e3-8a48-93d4809b005a.png",
   "sourceId": 2510,
@@ -2456,6 +2556,7 @@ window.catalog = [
   "available": true,
   "sku": "02010190712050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2580.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/c0f5cd84-ef8a-491b-90d3-ca83b197169b.png",
   "sourceId": 2580,
@@ -2480,6 +2581,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191112050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2353.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/48e2b7d0-1310-4b35-96e3-94f69b12691a.png",
   "sourceId": 2353,
@@ -2504,6 +2606,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2353.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/48e2b7d0-1310-4b35-96e3-94f69b12691a.png",
   "sourceId": 2353,
@@ -2528,6 +2631,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191212050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2288.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/097fd2ef-58f2-41a8-9529-61e6ead14f26.png",
   "sourceId": 2288,
@@ -2552,6 +2656,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191224050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2288.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/097fd2ef-58f2-41a8-9529-61e6ead14f26.png",
   "sourceId": 2288,
@@ -2575,7 +2680,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010191312050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2364",
@@ -2596,6 +2702,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191324050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2364.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/191281e4-a487-4b8c-b3c9-7849d6f151af.png",
   "sourceId": 2364,
@@ -2619,7 +2726,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010191424050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2305",
@@ -2640,6 +2748,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191524050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2305.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/73d5cd46-9821-4513-bb9d-ff7b4411589d.png",
   "sourceId": 2305,
@@ -2663,7 +2772,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010191624050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2728",
@@ -2684,6 +2794,7 @@ window.catalog = [
   "available": true,
   "sku": "02010191724050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2728.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/5a435aee-c006-4480-99a4-23d221502992.png",
   "sourceId": 2728,
@@ -2707,7 +2818,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010191812050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "monster-juiced-mango-loco-02010192112050",
@@ -2728,6 +2840,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192112050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2116.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/2c49358d-9f09-4f92-813b-93d2bbae9d82.png",
   "sourceId": 2116,
@@ -2752,6 +2865,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2116.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/2c49358d-9f09-4f92-813b-93d2bbae9d82.png",
   "sourceId": 2116,
@@ -2776,6 +2890,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192212050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2382.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/9dabce75-3952-4a8e-840f-d0341c9b1ab1.png",
   "sourceId": 2382,
@@ -2800,6 +2915,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192224050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2382.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/9dabce75-3952-4a8e-840f-d0341c9b1ab1.png",
   "sourceId": 2382,
@@ -2823,7 +2939,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010192324050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "monster-juiced-monarch-02010192424050",
@@ -2843,7 +2960,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "02010192424050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2388",
@@ -2864,6 +2982,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192524050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2388.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/d609c9a0-81ed-4b7b-9b89-483286f4e3bb.png",
   "sourceId": 2388,
@@ -2888,6 +3007,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192624050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2582.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/c3d3d105-acad-4ddc-8313-d2de0c22448e.png",
   "sourceId": 2582,
@@ -2912,6 +3032,7 @@ window.catalog = [
   "available": true,
   "sku": "02010192724050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3085.webp",
   "imageSource": "https://web-assests.monsterenergy.com/mnst/58d59ecd-2e2f-4471-8ff0-768044218c86.png",
   "sourceId": 3085,
@@ -2936,6 +3057,7 @@ window.catalog = [
   "available": true,
   "sku": "02010193124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2513.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/rehab-peach.jpg",
   "sourceId": 2513,
@@ -2959,7 +3081,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "09010199112050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "monster-vr-mix-09010199124050",
@@ -2979,7 +3102,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "09010199124050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2303",
@@ -3000,6 +3124,7 @@ window.catalog = [
   "available": true,
   "sku": "02010200124025",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2303.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/nalu-blik-24x25cl.png",
   "sourceId": 2303,
@@ -3024,6 +3149,7 @@ window.catalog = [
   "available": true,
   "sku": "02200010224025",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2278.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/02/nalu-exotic-blik-25cl.png",
   "sourceId": 2278,
@@ -3048,6 +3174,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230106033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2286.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa-reine-blauw-33cl-pet-palstic-flesjes-228x228-1.jpg",
   "sourceId": 2286,
@@ -3072,6 +3199,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230108050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2339.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Spa_Blauw_Reine_50cl_Pet-228x228-1.jpg",
   "sourceId": 2339,
@@ -3096,6 +3224,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230112033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2286.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa-reine-blauw-33cl-pet-palstic-flesjes-228x228-1.jpg",
   "sourceId": 2286,
@@ -3120,6 +3249,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2286.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa-reine-blauw-33cl-pet-palstic-flesjes-228x228-1.jpg",
   "sourceId": 2286,
@@ -3144,6 +3274,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2339.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Spa_Blauw_Reine_50cl_Pet-228x228-1.jpg",
   "sourceId": 2339,
@@ -3168,6 +3299,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230206033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2376.webp",
   "imageSource": "https://img.discountoffice.cloud/OdRm2gdjxhh-Cer7FvKPsiza_0ZKEDXzlLDspjrwd30/bg:ffffff/rs:fit:640:480:1:1/g:ce/bG9jYWw6Ly8vZGlzY291bnQtd2Vic2l0ZS9wcm9kdWN0SW1hZ2VzLzdjLzkvUTE0MzMwNDEtMS5qcGc.webp",
   "sourceId": 2376,
@@ -3192,6 +3324,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230206050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2308.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa_rood_flesjes_50cl-228x228-1.jpg",
   "sourceId": 2308,
@@ -3216,6 +3349,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230206150",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2501.webp",
   "imageSource": "https://drankshop.blob.core.windows.net/imagesthumbs/F9E73EA32A8DDB33807A5E578E468A604397801DF084D8F62AAE5544E02DBB67_240.jpg",
   "sourceId": 2501,
@@ -3240,6 +3374,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230212033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2376.webp",
   "imageSource": "https://img.discountoffice.cloud/OdRm2gdjxhh-Cer7FvKPsiza_0ZKEDXzlLDspjrwd30/bg:ffffff/rs:fit:640:480:1:1/g:ce/bG9jYWw6Ly8vZGlzY291bnQtd2Vic2l0ZS9wcm9kdWN0SW1hZ2VzLzdjLzkvUTE0MzMwNDEtMS5qcGc.webp",
   "sourceId": 2376,
@@ -3264,6 +3399,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230224033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2376.webp",
   "imageSource": "https://img.discountoffice.cloud/OdRm2gdjxhh-Cer7FvKPsiza_0ZKEDXzlLDspjrwd30/bg:ffffff/rs:fit:640:480:1:1/g:ce/bG9jYWw6Ly8vZGlzY291bnQtd2Vic2l0ZS9wcm9kdWN0SW1hZ2VzLzdjLzkvUTE0MzMwNDEtMS5qcGc.webp",
   "sourceId": 2376,
@@ -3288,6 +3424,7 @@ window.catalog = [
   "available": true,
   "sku": "03020230224050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2308.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa_rood_flesjes_50cl-228x228-1.jpg",
   "sourceId": 2308,
@@ -3312,6 +3449,7 @@ window.catalog = [
   "available": true,
   "sku": "03020240106050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2341.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/chaudfontaine-plat-50cl-PET-goedkoopdrank.jpg",
   "sourceId": 2341,
@@ -3336,6 +3474,7 @@ window.catalog = [
   "available": true,
   "sku": "03020240124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2341.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/chaudfontaine-plat-50cl-PET-goedkoopdrank.jpg",
   "sourceId": 2341,
@@ -3360,6 +3499,7 @@ window.catalog = [
   "available": true,
   "sku": "03020240206050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2346.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/55de06e0-1908-11ef-9b69-02cc60c61b69.jpg?v=1730736732",
   "sourceId": 2346,
@@ -3384,6 +3524,7 @@ window.catalog = [
   "available": true,
   "sku": "03020240224050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2346.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/55de06e0-1908-11ef-9b69-02cc60c61b69.jpg?v=1730736732",
   "sourceId": 2346,
@@ -3408,6 +3549,7 @@ window.catalog = [
   "available": true,
   "sku": "03020250106150",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2311.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/c23b9bf12d914de729bf3ffc5dfc6e05.jpg?v=1791227922",
   "sourceId": 2311,
@@ -3432,6 +3574,7 @@ window.catalog = [
   "available": true,
   "sku": "03020260106150",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2335.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/81369fc7-1908-11ef-9b69-02cc60c61b69.jpg?v=1730741429",
   "sourceId": 2335,
@@ -3456,6 +3599,7 @@ window.catalog = [
   "available": true,
   "sku": "03020270106100",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2284.webp",
   "imageSource": "https://www.moneaucristaline.fr/wp-content/uploads/2022/06/CR-1L-bouchon-solidaire-1.png",
   "sourceId": 2284,
@@ -3480,6 +3624,7 @@ window.catalog = [
   "available": true,
   "sku": "03020270124050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2331.webp",
   "imageSource": "https://www.moneaucristaline.fr/wp-content/uploads/2022/06/CRISTALINE_50CLBS-1.png",
   "sourceId": 2331,
@@ -3504,6 +3649,7 @@ window.catalog = [
   "available": true,
   "sku": "03020270206150",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2389.webp",
   "imageSource": "https://www.moneaucristaline.fr/wp-content/uploads/2022/06/cristaline-gazeifie-1.5L-2.png",
   "sourceId": 2389,
@@ -3528,6 +3674,7 @@ window.catalog = [
   "available": true,
   "sku": "03020270224050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2374.webp",
   "imageSource": "https://www.moneaucristaline.fr/wp-content/uploads/2022/06/cristaline-gazeifiee-0.5L-detoure-1.png",
   "sourceId": 2374,
@@ -3558,6 +3705,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2734.webp",
   "imageSource": "https://drankshop.blob.core.windows.net/imagesthumbs/8590AA51432FDEB314E04DCD268F8FB50A0D934D3E907AB665CD15441BA107BA_240.png",
   "sourceId": 2734,
@@ -3588,6 +3736,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2735.webp",
   "imageSource": "https://drankshop.blob.core.windows.net/imagesthumbs/5478AFF534FFBDF08BF4F7F5A4AB30B46C7A0BE3B4CE6B30538979928530A44D_240.png",
   "sourceId": 2735,
@@ -3618,6 +3767,7 @@ window.catalog = [
    "price": 350,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2982.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/01/10-1111x788.png",
   "sourceId": 2982,
@@ -3648,6 +3798,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2982.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/01/10-1111x788.png",
   "sourceId": 2982,
@@ -3678,6 +3829,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2355.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/01/8-1111x788.png",
   "sourceId": 2355,
@@ -3708,6 +3860,7 @@ window.catalog = [
    "price": 350,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/3803.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/02/Bruis-1L-1111x788.png",
   "sourceId": 3803,
@@ -3738,6 +3891,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/3803.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/02/Bruis-1L-1111x788.png",
   "sourceId": 3803,
@@ -3768,6 +3922,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2327.webp",
   "imageSource": "https://ordal.be/content/uploads/2025/02/glas-20cl-1111x788.png",
   "sourceId": 2327,
@@ -3798,6 +3953,7 @@ window.catalog = [
    "price": 20,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2398.webp",
   "imageSource": "https://varesa.be/wp-content/uploads/2026/02/4710-VARESA-Sinaasappelsap-glas-6x1l-bak.png",
   "sourceId": 2398,
@@ -3828,6 +3984,7 @@ window.catalog = [
    "price": 300,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2398.webp",
   "imageSource": "https://varesa.be/wp-content/uploads/2026/02/4710-VARESA-Sinaasappelsap-glas-6x1l-bak.png",
   "sourceId": 2398,
@@ -3852,6 +4009,7 @@ window.catalog = [
   "available": true,
   "sku": "04030170124020",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2314.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/36a59533-6ebc-11ef-9e54-02cc60c61b69.jpg?v=1791228537",
   "sourceId": 2314,
@@ -3876,6 +4034,7 @@ window.catalog = [
   "available": true,
   "sku": "04030170224020",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2357.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/3805de89-6ebc-11ef-9e54-02cc60c61b69.jpg?v=1791228538",
   "sourceId": 2357,
@@ -3899,7 +4058,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "04030170324030",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-3202",
@@ -3920,6 +4080,7 @@ window.catalog = [
   "available": true,
   "sku": "05010410124025",
   "tax": 6,
+  "minAge": 0,
   "image": "single/3202.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/cecemel-25cl-goedkoopdrank.jpg",
   "sourceId": 3202,
@@ -3944,6 +4105,7 @@ window.catalog = [
   "available": true,
   "sku": "05020560101030",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2400.webp",
   "imageSource": "https://static.solucious.be/images/V0000578453_large.JPG",
   "sourceId": 2400,
@@ -3967,7 +4129,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "05030490124020",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "chocovit-05040420106050",
@@ -3988,6 +4151,7 @@ window.catalog = [
   "available": true,
   "sku": "05040420106050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2757.webp",
   "imageSource": "https://bossdrinks.be/wp-content/uploads/2026/05/Vitalac_Chocovit_12500ML.png",
   "sourceId": 2757,
@@ -4012,6 +4176,7 @@ window.catalog = [
   "available": true,
   "sku": "05040420112050",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2757.webp",
   "imageSource": "https://bossdrinks.be/wp-content/uploads/2026/05/Vitalac_Chocovit_12500ML.png",
   "sourceId": 2757,
@@ -4036,6 +4201,7 @@ window.catalog = [
   "available": true,
   "sku": "06010280106033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2366.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603270/325x375x2/jupiler-33cl.jpg",
   "sourceId": 2366,
@@ -4060,6 +4226,7 @@ window.catalog = [
   "available": true,
   "sku": "06010280106050",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2366.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603270/325x375x2/jupiler-33cl.jpg",
   "sourceId": 2366
@@ -4083,6 +4250,7 @@ window.catalog = [
   "available": true,
   "sku": "06010280124025",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2366.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603270/325x375x2/jupiler-33cl.jpg",
   "sourceId": 2366,
@@ -4107,6 +4275,7 @@ window.catalog = [
   "available": true,
   "sku": "06010280206033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2317.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603376/325x375x2/jupiler-blue-25cl.jpg",
   "sourceId": 2317
@@ -4131,6 +4300,7 @@ window.catalog = [
   "sku": "06010280306033",
   "tax": 21,
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/2361.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475910816/325x375x2/jupiler-00-25cl.jpg",
   "sourceId": 2361
@@ -4154,6 +4324,7 @@ window.catalog = [
   "available": true,
   "sku": "06010290106033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3301.webp",
   "imageSource": "https://cdn.carrefour.eu/1200_00897589_T1.webp",
   "sourceId": 3301,
@@ -4178,6 +4349,7 @@ window.catalog = [
   "available": true,
   "sku": "06010290106050",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3301.webp",
   "imageSource": "https://cdn.carrefour.eu/1200_00897589_T1.webp",
   "sourceId": 3301
@@ -4201,6 +4373,7 @@ window.catalog = [
   "available": true,
   "sku": "06010290124033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3301.webp",
   "imageSource": "https://cdn.carrefour.eu/1200_00897589_T1.webp",
   "sourceId": 3301,
@@ -4226,6 +4399,7 @@ window.catalog = [
   "sku": "06010290224033",
   "tax": 21,
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/3302.webp",
   "imageSource": "https://www.alldrinks.be/995-thickbox_default/stella-artois-00-33cl-cans.jpg",
   "sourceId": 3302,
@@ -4251,6 +4425,7 @@ window.catalog = [
   "sku": "06010290246033",
   "tax": 21,
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/3302.webp",
   "imageSource": "https://www.alldrinks.be/995-thickbox_default/stella-artois-00-33cl-cans.jpg",
   "sourceId": 3302,
@@ -4275,6 +4450,7 @@ window.catalog = [
   "available": true,
   "sku": "06010310106050",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2294.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/82273b07-6138-11ef-9e54-02cc60c61b69.jpg?width=650",
   "sourceId": 2294
@@ -4298,6 +4474,7 @@ window.catalog = [
   "available": true,
   "sku": "06010310206050",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2390.webp",
   "imageSource": "https://www.belgianbeerheaven.com/be/en/thumbnail/detail/nW47L/Leffe-Bruin-33Cl---10452-1700061689.png",
   "sourceId": 2390
@@ -4320,7 +4497,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "06010310412050",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "vr-2351",
@@ -4347,6 +4525,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2351.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603341/325x375x2/jupiler-25cl.jpg",
   "sourceId": 2351,
@@ -4377,6 +4556,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2317.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603376/325x375x2/jupiler-blue-25cl.jpg",
   "sourceId": 2317,
@@ -4408,6 +4588,7 @@ window.catalog = [
    "tax": 0
   },
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/2361.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475910816/325x375x2/jupiler-00-25cl.jpg",
   "sourceId": 2361,
@@ -4438,6 +4619,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2329.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603309/325x375x2/stella-artois-25cl.jpg",
   "sourceId": 2329,
@@ -4468,6 +4650,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2378.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/7b9b745a-1908-11ef-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2378,
@@ -4498,6 +4681,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/3061.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/e08ec872-ee6e-11ee-9b69-02cc60c61b69.png?width=650",
   "sourceId": 3061,
@@ -4527,7 +4711,8 @@ window.catalog = [
    "label": "Leeggoed Duvel 24x33cl (bak)",
    "price": 450,
    "tax": 0
-  }
+  },
+  "minAge": 16
  },
  {
   "id": "vr-2294",
@@ -4554,6 +4739,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2294.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/82273b07-6138-11ef-9e54-02cc60c61b69.jpg?width=650",
   "sourceId": 2294,
@@ -4584,6 +4770,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2390.webp",
   "imageSource": "https://www.belgianbeerheaven.com/be/en/thumbnail/detail/nW47L/Leffe-Bruin-33Cl---10452-1700061689.png",
   "sourceId": 2390,
@@ -4614,6 +4801,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2295.webp",
   "imageSource": "https://www.belgianbeerheaven.com/be/nl/thumbnail/detail/RPVVp/La-Chouffe-33Cl---10421-1748616521.png",
   "sourceId": 2295,
@@ -4644,6 +4832,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2279.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/595bd609-1908-11ef-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2279,
@@ -4673,7 +4862,8 @@ window.catalog = [
    "label": "Leeggoed Hoegaarden 24x25cl (bak)",
    "price": 450,
    "tax": 0
-  }
+  },
+  "minAge": 16
  },
  {
   "id": "vr-2337",
@@ -4694,6 +4884,7 @@ window.catalog = [
   "available": true,
   "sku": "06030340124033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2337.webp",
   "imageSource": "https://www.belgianbeerheaven.com/be/nl/thumbnail/detail/LDKp7/Westmalle-Tripel-33Cl---11189-1700062217.png",
   "sourceId": 2337,
@@ -4718,6 +4909,7 @@ window.catalog = [
   "available": true,
   "sku": "06030350124033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2413.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/4d61f06b-5f40-11ef-9e54-02cc60c61b69.jpg?width=650",
   "sourceId": 2413,
@@ -4743,6 +4935,7 @@ window.catalog = [
   "sku": "06030350224033",
   "tax": 21,
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/2980.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/59536607-ee48-11ee-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2980,
@@ -4773,6 +4966,7 @@ window.catalog = [
    "price": 350,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2386.webp",
   "imageSource": "https://vr-drinks.be/product/fles-piedboeuf-1x75cl/",
   "sourceId": 2386,
@@ -4797,6 +4991,7 @@ window.catalog = [
   "available": true,
   "sku": "06030380124025",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2334.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/e3ef9d89-1908-11ef-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2334,
@@ -4821,6 +5016,7 @@ window.catalog = [
   "available": true,
   "sku": "06030400124025",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2850.webp",
   "imageSource": "https://www.belgianbeerheaven.com/nl/nl/thumbnail/detail/RG91L/Palm-25Cl---10088-1700061887.png",
   "sourceId": 2850,
@@ -4846,6 +5042,7 @@ window.catalog = [
   "available": true,
   "sku": "06030430124033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3328.webp",
   "imageSource": "https://cdn.carrefour.eu/1200_05534360_M1_20241203.webp",
   "sourceId": 3328,
@@ -4869,7 +5066,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "06030450124033",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "vr-2289",
@@ -4897,6 +5095,7 @@ window.catalog = [
    "tax": 0
   },
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/2289.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/da14cf71-565a-11ef-9e54-02cc60c61b69.png?width=650",
   "sourceId": 2289,
@@ -4927,7 +5126,8 @@ window.catalog = [
    "price": 700,
    "tax": 0
   },
-  "alcoholFree": true
+  "alcoholFree": true,
+  "minAge": 0
  },
  {
   "id": "vr-2871",
@@ -4954,6 +5154,7 @@ window.catalog = [
    "price": 450,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2871.webp",
   "imageSource": "https://drankshop.blob.core.windows.net/imagesthumbs/3E4A37E1467D3617EF01C4C6344E89E9C4E3302D176D2A63A4392ED5FF1DCB2A_600.png",
   "sourceId": 2871,
@@ -4985,6 +5186,7 @@ window.catalog = [
    "tax": 0
   },
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/2643.webp",
   "imageSource": "https://drankencentrale-nuelant.drinxit.be/images/thumbs/0019718_carlsberg-00-25cl_510.png",
   "sourceId": 2643,
@@ -5009,6 +5211,7 @@ window.catalog = [
   "available": true,
   "sku": "06040300106033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2378.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/7b9b745a-1908-11ef-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2378,
@@ -5033,6 +5236,7 @@ window.catalog = [
   "available": true,
   "sku": "06040300206033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3061.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/e08ec872-ee6e-11ee-9b69-02cc60c61b69.png?width=650",
   "sourceId": 3061,
@@ -5056,7 +5260,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "06040300306033",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "leffe-blond-6-6-06040310106033",
@@ -5077,6 +5282,7 @@ window.catalog = [
   "available": true,
   "sku": "06040310106033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2294.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/82273b07-6138-11ef-9e54-02cc60c61b69.jpg?width=650",
   "sourceId": 2294,
@@ -5101,6 +5307,7 @@ window.catalog = [
   "available": true,
   "sku": "06040310206033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2390.webp",
   "imageSource": "https://www.belgianbeerheaven.com/be/en/thumbnail/detail/nW47L/Leffe-Bruin-33Cl---10452-1700061689.png",
   "sourceId": 2390,
@@ -5125,6 +5332,7 @@ window.catalog = [
   "available": true,
   "sku": "06040320106033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2295.webp",
   "imageSource": "https://www.belgianbeerheaven.com/be/nl/thumbnail/detail/RPVVp/La-Chouffe-33Cl---10421-1748616521.png",
   "sourceId": 2295,
@@ -5149,6 +5357,7 @@ window.catalog = [
   "available": true,
   "sku": "06040320204033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2279.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/595bd609-1908-11ef-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2279,
@@ -5173,6 +5382,7 @@ window.catalog = [
   "available": true,
   "sku": "06040350104033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2413.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/4d61f06b-5f40-11ef-9e54-02cc60c61b69.jpg?width=650",
   "sourceId": 2413,
@@ -5198,6 +5408,7 @@ window.catalog = [
   "sku": "06040350206033",
   "tax": 21,
   "alcoholFree": true,
+  "minAge": 0,
   "image": "single/2980.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/59536607-ee48-11ee-9b69-02cc60c61b69.jpg?width=650",
   "sourceId": 2980,
@@ -5228,6 +5439,7 @@ window.catalog = [
    "price": 30,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2292.webp",
   "imageSource": "https://vr-drinks.be/product/fles-piedboeuf-1x75cl/",
   "sourceId": 2292,
@@ -5253,6 +5465,7 @@ window.catalog = [
   "available": true,
   "sku": "06040430106033",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3328.webp",
   "imageSource": "https://cdn.carrefour.eu/1200_05534360_M1_20241203.webp",
   "sourceId": 3328,
@@ -5276,7 +5489,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "06040450106033",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "jupiler-5-2-06050280120000",
@@ -5303,6 +5517,7 @@ window.catalog = [
    "price": 3000,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2366.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603270/325x375x2/jupiler-33cl.jpg",
   "sourceId": 2366
@@ -5332,6 +5547,7 @@ window.catalog = [
    "price": 3000,
    "tax": 0
   },
+  "minAge": 16,
   "image": "single/2366.webp",
   "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603270/325x375x2/jupiler-33cl.jpg",
   "sourceId": 2366
@@ -5360,7 +5576,8 @@ window.catalog = [
    "label": "Leeggoed Stella Artois 50L (VAT)",
    "price": 3000,
    "tax": 0
-  }
+  },
+  "minAge": 16
  },
  {
   "id": "vr-3228",
@@ -5381,6 +5598,7 @@ window.catalog = [
   "available": true,
   "sku": "07040520101075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3228.webp",
   "imageSource": "https://www.webshop.vanaltenawijchen.nl/uploads/products/16351/normal/churubito-chardonnay.png",
   "sourceId": 3228,
@@ -5405,6 +5623,7 @@ window.catalog = [
   "available": true,
   "sku": "07040520201075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3323.webp",
   "imageSource": "https://www.webshop.vanaltenawijchen.nl/uploads/products/16352/normal/churubita-rose.png",
   "sourceId": 3323,
@@ -5429,6 +5648,7 @@ window.catalog = [
   "available": true,
   "sku": "07040520301075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3326.webp",
   "imageSource": "http://bottlez.nl/cdn/shop/files/Product_image_vol_wit_-_3200_x_3200_px_13.png?v=1748205577",
   "sourceId": 3326,
@@ -5453,6 +5673,7 @@ window.catalog = [
   "available": true,
   "sku": "07040520401075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/3474.webp",
   "imageSource": "http://bottlez.nl/cdn/shop/files/ChurubitoVerdejo.png?v=1748193297",
   "sourceId": 3474,
@@ -5477,6 +5698,7 @@ window.catalog = [
   "available": true,
   "sku": "07040530101075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2319.webp",
   "imageSource": "https://www.imbev.it/wp-content/uploads/2026/01/0682-000-3000.jpg",
   "sourceId": 2319,
@@ -5501,6 +5723,7 @@ window.catalog = [
   "available": true,
   "sku": "07040530201075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2372.webp",
   "imageSource": "https://www.imbev.it/wp-content/uploads/2026/01/0683-000-3002.jpg",
   "sourceId": 2372,
@@ -5525,6 +5748,7 @@ window.catalog = [
   "available": true,
   "sku": "07040580101075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2316.webp",
   "imageSource": "https://vr-drinks.be/product/cava-laura-dor/",
   "sourceId": 2316,
@@ -5549,6 +5773,7 @@ window.catalog = [
   "available": true,
   "sku": "07040590101075",
   "tax": 21,
+  "minAge": 16,
   "image": "single/2293.webp",
   "imageSource": "https://www.wijnthousiast.be/wp-content/uploads/2026/03/Oval_Brut_-_75cl_.png",
   "sourceId": 2293,
@@ -5572,7 +5797,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "07040600101075",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "bodega-alceno-my-pet-tinto-07040600201075",
@@ -5592,7 +5818,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "07040600201075",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "bodega-alceno-my-pet-rosado-07040600301075",
@@ -5612,7 +5839,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "07040600301075",
-  "tax": 21
+  "tax": 21,
+  "minAge": 16
  },
  {
   "id": "vr-2373",
@@ -5633,6 +5861,7 @@ window.catalog = [
   "available": true,
   "sku": "08040440101100",
   "tax": 21,
+  "minAge": 18,
   "image": "single/2373.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/903569a7b72c7e7282d883abbf933464.jpg?width=650",
   "sourceId": 2373,
@@ -5656,7 +5885,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "08040441101070",
-  "tax": 21
+  "tax": 21,
+  "minAge": 18
  },
  {
   "id": "filliers-appeljenever18-0-08040441201070",
@@ -5676,7 +5906,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "08040441201070",
-  "tax": 21
+  "tax": 21,
+  "minAge": 18
  },
  {
   "id": "filliers-bessenjenever-18-0-08040441301070",
@@ -5696,7 +5927,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "08040441301070",
-  "tax": 21
+  "tax": 21,
+  "minAge": 18
  },
  {
   "id": "filliers-vanillejenever-17-0-08040442101070",
@@ -5716,7 +5948,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "08040442101070",
-  "tax": 21
+  "tax": 21,
+  "minAge": 18
  },
  {
   "id": "vr-2302",
@@ -5737,6 +5970,7 @@ window.catalog = [
   "available": true,
   "sku": "08040442201070",
   "tax": 21,
+  "minAge": 18,
   "image": "single/2302.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/39cfeda8d4fef1302bd267324b403030.jpg?width=650",
   "sourceId": 2302,
@@ -5760,7 +5994,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "08040442301070",
-  "tax": 21
+  "tax": 21,
+  "minAge": 18
  },
  {
   "id": "vr-2322",
@@ -5781,6 +6016,7 @@ window.catalog = [
   "available": true,
   "sku": "08040500101070",
   "tax": 21,
+  "minAge": 18,
   "image": "single/2322.webp",
   "imageSource": "https://cdn.carrefour.eu/1200_04465315_T1.webp",
   "sourceId": 2322,
@@ -5805,6 +6041,7 @@ window.catalog = [
   "available": true,
   "sku": "08040540140002",
   "tax": 21,
+  "minAge": 18,
   "image": "single/2858.webp",
   "imageSource": "https://www.nevejan.eu/media/catalog/product/cache/3/image/1800x/040ec09b1e35df139433887a97daa66f/m/i/Miniatuur_flugel_40x2cl_3.jpg",
   "sourceId": 2858,
@@ -5829,6 +6066,7 @@ window.catalog = [
   "available": true,
   "sku": "09020210124033",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2362.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/AA-Drink-High-Energy-Orange-33cl-228x228-1.jpg",
   "sourceId": 2362,
@@ -5852,7 +6090,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "09020550124050",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2349",
@@ -5873,6 +6112,7 @@ window.catalog = [
   "available": true,
   "sku": "10060800120040",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2349.webp",
   "imageSource": "https://www.abelog.be/files/uploads/2025/05/Liste-produits.pdf#page=15",
   "sourceId": 2349,
@@ -5897,6 +6137,7 @@ window.catalog = [
   "available": true,
   "sku": "10060800220040",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2325.webp",
   "imageSource": "https://www.abelog.be/files/uploads/2025/05/Liste-produits.pdf#page=15",
   "sourceId": 2325,
@@ -5920,7 +6161,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "10060800320040",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "vr-2309",
@@ -5941,6 +6183,7 @@ window.catalog = [
   "available": true,
   "sku": "10060800420040",
   "tax": 6,
+  "minAge": 0,
   "image": "single/2309.webp",
   "imageSource": "https://www.abelog.be/files/uploads/2025/05/Liste-produits.pdf#page=15",
   "sourceId": 2309,
@@ -5964,7 +6207,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "10060800520040",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "dolce-gusto-espresso-intenso-11060570101016",
@@ -5984,7 +6228,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "11060570101016",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "dolce-gusto-ristretto-napoli-11060570201016",
@@ -6004,7 +6249,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "11060570201016",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "dolce-gusto-lungo-11060570301016",
@@ -6024,7 +6270,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "11060570301016",
-  "tax": 6
+  "tax": 6,
+  "minAge": 0
  },
  {
   "id": "bakfrigo-80010100000001",
@@ -6045,6 +6292,7 @@ window.catalog = [
   "available": true,
   "sku": "80010100000001",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2403.webp",
   "imageSource": "https://vr-drinks.be/product/huur-koelbox-09-23/",
   "sourceId": 2403,
@@ -6069,6 +6317,7 @@ window.catalog = [
   "available": true,
   "sku": "80010100000002",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2403.webp",
   "imageSource": "https://vr-drinks.be/product/huur-koelbox-09-23/",
   "sourceId": 2403,
@@ -6093,6 +6342,7 @@ window.catalog = [
   "available": true,
   "sku": "80010100000003",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2403.webp",
   "imageSource": "https://vr-drinks.be/product/huur-koelbox-09-23/",
   "sourceId": 2403,
@@ -6117,6 +6367,7 @@ window.catalog = [
   "available": true,
   "sku": "80010200000001",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2409.webp",
   "imageSource": "https://vr-drinks.be/product/huur-koelwagen-12-24/",
   "sourceId": 2409,
@@ -6141,6 +6392,7 @@ window.catalog = [
   "available": true,
   "sku": "80010200000002",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2409.webp",
   "imageSource": "https://vr-drinks.be/product/huur-koelwagen-12-24/",
   "sourceId": 2409,
@@ -6165,6 +6417,7 @@ window.catalog = [
   "available": true,
   "sku": "80010200000003",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2409.webp",
   "imageSource": "https://vr-drinks.be/product/huur-koelwagen-12-24/",
   "sourceId": 2409,
@@ -6189,6 +6442,7 @@ window.catalog = [
   "available": true,
   "sku": "80020100000001",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2407.webp",
   "imageSource": "https://vr-drinks.be/product/statafel/",
   "sourceId": 2407,
@@ -6212,7 +6466,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "80020200000001",
-  "tax": 21
+  "tax": 21,
+  "minAge": 0
  },
  {
   "id": "tafel-4p-80030100000001",
@@ -6232,7 +6487,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "80030100000001",
-  "tax": 21
+  "tax": 21,
+  "minAge": 0
  },
  {
   "id": "vr-2405",
@@ -6253,6 +6509,7 @@ window.catalog = [
   "available": true,
   "sku": "80030100000002",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2405.webp",
   "imageSource": "https://vr-drinks.be/product/grote-tafel-6-personen/",
   "sourceId": 2405,
@@ -6277,6 +6534,7 @@ window.catalog = [
   "available": true,
   "sku": "80040100000001",
   "tax": 21,
+  "minAge": 0,
   "image": "single/2396.webp",
   "imageSource": "https://vr-drinks.be/product/stoelen/",
   "sourceId": 2396,
@@ -6300,7 +6558,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "80050100000001",
-  "tax": 21
+  "tax": 21,
+  "minAge": 0
  },
  {
   "id": "glazen-80060100000001",
@@ -6320,7 +6579,8 @@ window.catalog = [
   ],
   "available": true,
   "sku": "80060100000001",
-  "tax": 21
+  "tax": 21,
+  "minAge": 0
  },
  {
   "id": "vr-3853",
@@ -6341,6 +6601,7 @@ window.catalog = [
   "available": true,
   "sku": "08010610124025",
   "tax": 21,
+  "minAge": 18,
   "image": "single/3853.webp",
   "imageSource": "https://d2j6dbq0eux0bg.cloudfront.net/images/31407174/1552857892.jpg",
   "sourceId": 3853,
@@ -6371,6 +6632,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2341.webp",
   "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/chaudfontaine-plat-50cl-PET-goedkoopdrank.jpg",
   "sourceId": 2341
@@ -6400,6 +6662,7 @@ window.catalog = [
    "price": 500,
    "tax": 0
   },
+  "minAge": 0,
   "image": "single/2346.webp",
   "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/55de06e0-1908-11ef-9b69-02cc60c61b69.jpg?v=1730736732",
   "sourceId": 2346
@@ -6428,7 +6691,8 @@ window.catalog = [
    "label": "Leeggoed San Pellegrino 24x25cl (bak)",
    "price": 450,
    "tax": 0
-  }
+  },
+  "minAge": 0
  },
  {
   "id": "wijntas-6007040100001",
@@ -6448,6 +6712,7 @@ window.catalog = [
   ],
   "available": true,
   "sku": "6007040100001",
-  "tax": 21
+  "tax": 21,
+  "minAge": 0
  }
 ];

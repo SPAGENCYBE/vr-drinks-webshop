@@ -5,6 +5,8 @@
 import { admin, catalog, cors, json, mollie, pushToOnlinefact, SITE_URL, env } from '../_shared/shop.ts';
 
 const euro = (c: number) => (c / 100).toFixed(2);
+// Leeftijdsgrens per soort: bier/wijn/cava 16+, sterke drank en mixdranken 18+, alcoholvrij bier geen grens.
+const minAge = (it: any) => Number(it?.minAge ?? 0);
 const clean = (v: unknown, max = 200) => String(v ?? '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max);
 
 Deno.serve(async req => {
@@ -20,8 +22,7 @@ Deno.serve(async req => {
 
     const body = await req.json();
     const { data: profile } = await db.from('profiles').select('*').eq('id', user.id).single();
-    if (!profile?.age_confirmed) return json(req, { error: 'Bevestig in je account dat je 18 jaar of ouder bent.' }, 403);
-    if (!profile.first_name || !profile.last_name || !profile.phone) return json(req, { error: 'Vul je naam en telefoonnummer aan in je account.' }, 400);
+    if (!profile?.first_name || !profile.last_name || !profile.phone) return json(req, { error: 'Vul je naam en telefoonnummer aan in je account.' }, 400);
     if (body.terms !== true) return json(req, { error: 'Aanvaard de algemene voorwaarden.' }, 400);
 
     const { data: settings } = await db.from('settings').select('*').eq('id', 1).single();
@@ -45,6 +46,8 @@ Deno.serve(async req => {
         deposit += it.deposit.price * qty;
       }
     }
+    const needAge = Math.max(0, ...wanted.map((w: any) => minAge(items.get(String(w.id)))));
+    if (needAge && Number(body.age_ok) < needAge) return json(req, { error: `Je winkelwagen bevat alcohol. Bevestig dat je ${needAge} jaar of ouder bent.` }, 400);
     if (subtotal < settings.min_order) return json(req, { error: `Het minimum bestelbedrag is € ${euro(settings.min_order)} (exclusief leeggoed).` }, 400);
 
     // ---- Afhalen / leveren ----
@@ -78,7 +81,7 @@ Deno.serve(async req => {
     const { data: order, error } = await db.from('orders').insert({
       user_id: user.id, status: payment === 'factuur' ? 'op_factuur' : 'wacht_op_betaling', payment_method: payment,
       fulfilment, store, delivery, wanted_date: wantedDate, note: clean(body.note, 500) || null,
-      lines, subtotal, deposit, delivery_fee: fee, total,
+      lines, subtotal, deposit, delivery_fee: fee, total, age_confirmed_for: needAge || null,
     }).select().single();
     if (error) throw error;
 

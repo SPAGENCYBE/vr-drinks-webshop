@@ -26,6 +26,7 @@ export function admin(): SupabaseClient {
 
 // ---------- Catalogus (gepubliceerd uit Onlinefact) ----------
 export type Item = {
+  alcoholFree?: boolean; minAge?: number;
   id: string; title: string; label: string; kind: string; sku: string; tax: number; available: boolean;
   packs: { units: number; price: number }[];
   deposit?: { ref: string; label: string; price: number; tax: number };

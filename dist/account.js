@@ -67,7 +67,6 @@
         <details class="biz"><summary>Bestel je voor een bedrijf?</summary>
           <div class="row2"><label class="field">Bedrijfsnaam<input name="company" autocomplete="organization"></label>
           <label class="field">Btw-nummer<input name="vat" placeholder="BE0123.456.789"></label></div></details>
-        <label class="check"><input type="checkbox" name="age" required> Ik ben 18 jaar of ouder.</label>
         <label class="check"><input type="checkbox" name="terms" required> Ik ga akkoord met de algemene voorwaarden en het privacybeleid van VR Drinks.</label>
         <button class="primary">Account aanmaken</button>
         <p class="formmsg" role="status"></p></form>`;
@@ -79,7 +78,7 @@
           email: fieldVal(f, 'email'), password: fieldVal(f, 'password'),
           options: { emailRedirectTo: base + '?login=1', data: {
             first_name: fieldVal(f, 'first_name'), last_name: fieldVal(f, 'last_name'), phone: fieldVal(f, 'phone'),
-            company: fieldVal(f, 'company'), vat: fieldVal(f, 'vat'), age_confirmed: true } },
+            company: fieldVal(f, 'company'), vat: fieldVal(f, 'vat') } },
         });
         if (error) return msg(out, /registered|exists/i.test(error.message) ? 'Er bestaat al een account met dit e-mailadres. Log in of kies "Wachtwoord vergeten".' : 'Account aanmaken lukte niet: ' + error.message);
         setShop(`<h1>Bijna klaar</h1><p class="lead">We stuurden een mail naar <strong>${esc(fieldVal(f, 'email'))}</strong>. Klik op de link in die mail om je account te bevestigen.</p><p class="note">Geen mail ontvangen? Kijk ook in je spam.</p>`);
@@ -130,7 +129,6 @@
           <label class="field">Straat en nummer<input name="street" autocomplete="street-address" value="${esc(p.street)}"></label>
           <div class="row2"><label class="field">Postcode<input name="zip" inputmode="numeric" autocomplete="postal-code" value="${esc(p.zip)}"></label>
           <label class="field">Gemeente<input name="city" autocomplete="address-level2" value="${esc(p.city)}"></label></div>
-          ${p.age_confirmed ? '' : '<label class="check"><input type="checkbox" name="age" required> Ik ben 18 jaar of ouder (nodig om te bestellen).</label>'}
           <button class="primary">Opslaan</button><p class="formmsg" role="status"></p>
           ${p.invoice_allowed ? '<p class="note">Je account is goedgekeurd om op factuur te betalen.</p>' : ''}
         </form></section>
@@ -141,7 +139,6 @@
       e.preventDefault(); const f = e.target, out = f.querySelector('.formmsg');
       if (!f.checkValidity()) { f.reportValidity(); return; }
       const upd = Object.fromEntries(['first_name', 'last_name', 'phone', 'company', 'vat', 'street', 'zip', 'city'].map(k => [k, fieldVal(f, k) || null]));
-      if (f.age?.checked) upd.age_confirmed = true;
       upd.updated_at = new Date().toISOString();
       const { error } = await sb.from('profiles').update(upd).eq('id', session.user.id);
       if (error) return msg(out, 'Opslaan lukte niet.');
@@ -165,11 +162,12 @@
     const s = await loadSettings();
     if (!s) { setShop('<h1>Afrekenen</h1><p class="formmsg err">Afrekenen is tijdelijk niet beschikbaar. Probeer het later opnieuw.</p>'); return; }
     if (!session.user.email_confirmed_at) { setShop('<h1>Afrekenen</h1><p class="lead">Bevestig eerst je e-mailadres via de link in je mailbox.</p>'); return; }
-    if (!profile?.age_confirmed) { setShop('<h1>Afrekenen</h1><p class="lead">Om te bestellen moet je bevestigen dat je 18 jaar of ouder bent.</p><a class="primary" href="#/account">Naar mijn account</a>'); return; }
     const p = profile ?? {};
     const sub = cart.reduce((t, r) => t + priceOf(r) * r.qty, 0);
     const dep = cart.reduce((t, r) => t + depositOf(r), 0);
     const stores = s.pickup_stores ?? [];
+    const minAge = it => Number(it?.minAge ?? 0);
+    const needAge = Math.max(0, ...cart.map(r => minAge(byId(r.id))));
     setShop(`<h1>Afrekenen</h1>
       <form class="form checkout" id="coForm" novalidate>
         <fieldset><legend>Hoe wil je je bestelling ontvangen?</legend>
@@ -191,6 +189,7 @@
           ${p.invoice_allowed ? '<label class="choice"><input type="radio" name="payment" value="factuur"> <span><strong>Op factuur</strong><small>Voor goedgekeurde zakelijke klanten</small></span></label>' : ''}
         </fieldset>
         <div class="totals" id="totals"></div>
+        ${needAge ? `<label class="check"><input type="checkbox" name="age" required> Mijn bestelling bevat alcohol. Ik bevestig dat ik ${needAge} jaar of ouder ben. Bij afhalen of levering kan naar een identiteitsbewijs gevraagd worden.</label>` : ''}
         <label class="check"><input type="checkbox" name="terms" required> Ik ga akkoord met de algemene voorwaarden.</label>
         <button class="primary" id="payBtn">Bestellen en betalen</button>
         <p class="formmsg" role="status"></p>
@@ -213,6 +212,7 @@
     f.date.onchange = () => { if (new Date(f.date.value).getDay() === 0) { msg(f.querySelector('.formmsg'), 'Op zondag zijn we gesloten. Kies een andere dag.'); f.date.value = ''; } };
     f.onsubmit = async e => {
       e.preventDefault(); const out = f.querySelector('.formmsg');
+      if (needAge && !f.age.checked) return msg(out, `Je bestelling bevat alcohol: bevestig dat je ${needAge} jaar of ouder bent.`);
       if (!f.terms.checked) return msg(out, 'Vink aan dat je akkoord gaat met de algemene voorwaarden.');
       const btn = $('payBtn'); btn.disabled = true; msg(out, 'Je bestelling wordt aangemaakt…', true);
       const { data: { session: fresh } } = await sb.auth.getSession();
@@ -224,7 +224,7 @@
             items: cart.map(r => ({ id: r.id, qty: r.qty })),
             fulfilment: f.fulfilment.value, store: f.store?.value,
             delivery: { name: fieldVal(f, 'd_name'), street: fieldVal(f, 'd_street'), zip: fieldVal(f, 'd_zip'), city: fieldVal(f, 'd_city') },
-            wanted_date: f.date.value || null, note: fieldVal(f, 'note'), payment: f.payment.value, terms: true,
+            wanted_date: f.date.value || null, note: fieldVal(f, 'note'), payment: f.payment.value, terms: true, age_ok: needAge && f.age.checked ? needAge : 0,
           }),
         });
         const body = await res.json();

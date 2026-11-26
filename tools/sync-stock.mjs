@@ -170,6 +170,9 @@ for (const p of products) {
   ids.add(item.id);
   if (parsed.origin) item.origin = parsed.origin;
   if (kind === 'Bieren' && /\b0[.,]0\s*%|0[.,]3\s*%|alcoholvrij|alcohol-free/i.test(p.description + ' ' + (e?.title ?? ''))) item.alcoholFree = true;
+  // Leeftijdsgrens volgens de Onlinefact-categorie: sterke drank 18+, bier en wijn 16+, alcoholvrij geen grens.
+  const ofCatU = ofCat.toUpperCase();
+  item.minAge = item.alcoholFree ? 0 : ofCatU === 'STERKE DRANK' ? 18 : ['BIER', 'WIJN'].includes(ofCatU) ? 16 : 0;
   for (const k of ['image', 'imageSource', 'sourceId', 'taste', 'glow', 'wrap', 'color', 'variant', 'volume', 'aspect']) if (e?.[k] !== undefined) item[k] = e[k];
   if (!e) {
     report.nieuw.push(`${item.title} · ${label}`);
