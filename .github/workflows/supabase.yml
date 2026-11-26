@@ -57,8 +57,8 @@ jobs:
           [ -n "$ONLINEFACT_API_KEY" ] && args+=("ONLINEFACT_API_KEY=$ONLINEFACT_API_KEY")
           [ -n "$ONLINEFACT_API_SECRET" ] && args+=("ONLINEFACT_API_SECRET=$ONLINEFACT_API_SECRET")
           [ -n "$MOLLIE_API_KEY" ] && args+=("MOLLIE_API_KEY=$MOLLIE_API_KEY") || echo "::warning::MOLLIE_API_KEY ontbreekt: online betalen staat nog uit"
-          supabase secrets set --project-ref "$PROJECT_REF" "${args[@]}" > /dev/null
+          supabase secrets set --project-ref "$PROJECT_REF" --yes "${args[@]}" > /dev/null
           echo "Geheimen gezet (Onlinefact-doorsturen: $ONLINEFACT_ORDERS_ENABLED)"
 
       - name: Serverfuncties uitrollen
-        run: supabase functions deploy --project-ref "$PROJECT_REF" --use-api
+        run: supabase functions deploy --project-ref "$PROJECT_REF" --use-api --yes
