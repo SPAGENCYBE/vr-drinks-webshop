@@ -54,3 +54,30 @@
 .impact-film{opacity:0}.impact-playing .impact-film{opacity:1}.impact-playing .impact-cover{visibility:hidden}
 @media(prefers-reduced-motion:reduce){.impact-film{display:none}.impact-playing .impact-cover{visibility:visible}}
 
+/* Ontdek onze winkels: kaart + winkels */
+.storesLayout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:stretch}
+.storesLayout .storeGrid{grid-template-columns:1fr;gap:28px;align-content:start}
+.storeMap{position:relative;min-height:440px;border-radius:14px;overflow:hidden;background:#171316;border:1px solid #2c2427}
+.mapLoading{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:#a99c9e;font-size:14px}
+.storeMap .mapTiles{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.88) saturate(.35)}
+.storeMap .leaflet-container,.storeMap.leaflet-container{background:#171316;font:inherit}
+.storeMap.leaflet-container .leaflet-control-attribution{background:#0b090bcc;color:#a99c9e;font-size:11px}.storeMap.leaflet-container .leaflet-control-attribution a{color:#e7d9d4}
+.storeMap.leaflet-container .leaflet-bar a{background:#1d181a;color:#fff;border-color:#3a3033}.storeMap.leaflet-container .leaflet-bar a:hover{background:#2a2225}
+.vrPin{background:none;border:0}
+.vrPin span{display:grid;place-items:center;width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--red,#a81122);box-shadow:0 0 0 3px #fff,0 6px 16px #0008;transition:transform .2s}
+.vrPin span::before{content:'VR';transform:rotate(45deg);font:800 15px/1 Compact,Impact,sans-serif;color:#fff;letter-spacing:.02em}
+.vrPin span{font-size:0}
+.vrPin:hover span{transform:rotate(-45deg) scale(1.08)}
+.storeMap.leaflet-container .leaflet-popup-content-wrapper{border-radius:12px;background:#fff;color:#21191a}
+.storeMap .leaflet-popup-content{margin:14px 16px;min-width:210px}
+.mapPop{display:grid;gap:6px;font-size:14px;line-height:1.35}.mapPop strong{font-size:16px}
+.popActions{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}.popActions a{color:var(--red,#a81122);font-weight:bold;text-decoration:underline;text-underline-offset:3px}
+.storeHead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.openNow{font-size:13px;font-weight:bold;color:#e3a9ad}.openNow::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:1px}
+.openNow.is-open{color:#7ed39b}.mapPop .openNow{color:#a81122}.mapPop .openNow.is-open{color:#1f7a3f}
+.storeGrid article{transition:border-color .2s}.storeGrid article.active{border-top-color:var(--red,#a81122)}
+.storeActions{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+.storeActions button,.storeActions a{font:inherit;font-size:14px;font-weight:bold;color:#fff;text-decoration:underline;text-underline-offset:4px;background:none;border:0;padding:6px 0;cursor:pointer;min-height:44px}
+.storeActions button:focus-visible,.storeActions a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:860px){.storesLayout{grid-template-columns:1fr}.storeMap{min-height:340px}}
+@media(prefers-reduced-motion:reduce){.vrPin span{transition:none}}
