@@ -53,25 +53,81 @@ function alcoholSection(p){
  return p.kind==='Bieren'?alcoholSections[0]:alcoholSections[1];
 }
 function sortName(p){return p.title.replace(/^(?:bak|pet)\s+/i,'').replace(/coca-cola/ig,'Coca Cola')}
+function stockLine(p){
+ if(!p.available)return '<span class="stockDot out">Uitverkocht</span>';
+ if(p.stock!=null&&p.stock<=5)return '<span class="stockDot low">Nog '+p.stock+' beschikbaar</span>';
+ return '<span class="stockDot">Op voorraad</span>';
+}
 function productTile(p){
- const pack=p.packs[0];
- return '<a class="tile" href="'+productUrl(p)+'">'+photo(p)+'<span class="tile-name">'+nameOf(p)+'</span><p>'+packName(p,pack.units)+' · '+money(pack.price)+(p.available?'':' · Uitverkocht')+'</p></a>';
+ const pack=p.packs[0],url=productUrl(p);
+ const buy=p.available?'<form class="quickAdd" data-add="'+p.id+'"><label class="sr" for="qa-'+p.id+'">Aantal</label><input id="qa-'+p.id+'" type="number" inputmode="numeric" min="1" max="'+maxOf(p)+'" value="1" required><button type="submit">In winkelwagen</button></form>':'<a class="quickMore" href="'+url+'">Bekijk product</a>';
+ return '<article class="tile"><a class="tilePhoto" href="'+url+'" tabindex="-1" aria-hidden="true">'+photo(p,false)+'</a><div class="tileBody"><span class="tileBrand">'+esc(p.brand)+'</span><a class="tile-name" href="'+url+'">'+esc(nameOf(p))+'</a><span class="tilePack">'+esc(packName(p,pack.units))+'</span><strong class="tilePrice">'+money(pack.price)+'</strong>'+stockLine(p)+buy+'</div></article>';
+}
+function bindQuickAdd(root){
+ root.querySelectorAll('[data-add]').forEach(form=>form.onsubmit=e=>{
+  e.preventDefault();const p=byId(form.dataset.add),input=form.querySelector('input'),btn=form.querySelector('button');
+  if(!input.checkValidity()){input.reportValidity();return}
+  const units=p.packs[0].units,qty=+input.value,max=maxOf(p),existing=cart.find(r=>r.id===p.id&&r.units===units);
+  if((existing?existing.qty:0)+qty>max){announce(max<999?'Er zijn nog maar '+max+' beschikbaar.':'Maximaal 999 per verkoopeenheid.');btn.textContent='Max. '+max;setTimeout(()=>btn.textContent='In winkelwagen',1800);return}
+  if(existing)existing.qty+=qty;else cart.push({id:p.id,units,qty});saveCart();
+  announce(qty+' × '+nameOf(p)+' toegevoegd aan de winkelwagen');btn.textContent='Toegevoegd ✓';btn.classList.add('done');input.value=1;
+  setTimeout(()=>{btn.textContent='In winkelwagen';btn.classList.remove('done')},1800);
+ });
 }
 function productGrid(items){return '<div class="grid">'+items.map(productTile).join('')+'</div>'}
 function searchText(value){return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/(\d)[,.](?=\d)/g,'$1').replace(/(\d)\s*x\s*(?=\d)/g,'$1').replace(/[\s%×–-]+/g,'')}
-const landingCategories=new Map([['alcohol','Alcohol'],['frisdrank','Frisdrank'],['verhuur','Verhuur']]);
+const brandKey=b=>String(b||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g,'');
+const keyOf=p=>{const d=department(p);return d==='Alcohol'?alcoholSection(p):d};
+const shopGroups=[
+ {slug:'frisdrank',name:'Frisdrank',keys:['Frisdrank'],intro:'Cola, limonade, ice tea, tonic en meer: de bekende merken in blik, petfles en glas. Per stuk, per tray of per bak, zoals het jou past.'},
+ {slug:'water',name:'Water',keys:['Water'],intro:'Plat en bruisend water van onder meer Spa, Chaudfontaine en Ordal. Handig in grote verpakkingen voor thuis, op kantoor of op een feest.'},
+ {slug:'energie-sport',name:'Energie & sport',keys:['Energiedrank','Sportdrank'],intro:'Energiedranken en sportdranken voor wie een extra boost zoekt. Met een ruime keuze aan smaken, ook zonder suiker.'},
+ {slug:'sap-melk',name:'Sap & melk',keys:['Sap & fruitdrank','Melkdrank'],intro:'Fruitsap, fruitdrank en chocomelk: voor bij het ontbijt, op school of gewoon tussendoor.'},
+ {slug:'bier',name:'Bier',keys:['Bier'],intro:'Pils, abdijbier, trappist en speciaalbier. Van de Belgische klassiekers tot een fris pintje voor op het terras.'},
+ {slug:'alcoholvrij',name:'Alcoholvrij',keys:['Alcoholvrij bier'],intro:'Alle smaak van een goed bier, zonder alcohol. Ideaal als je nog moet rijden of gewoon iets lichters wilt.'},
+ {slug:'wijn-bubbels',name:'Wijn & bubbels',keys:['Wijn & bubbels'],intro:'Rode, witte en rosé wijn, en bubbels voor een feestelijk moment.'},
+ {slug:'sterke-drank',name:'Sterke drank',keys:['Aperitieven, sterke drank & mixdranken'],intro:'Aperitieven, jenever, sterke drank en mixdranken voor een gezellig aperitief of een feest.'},
+ {slug:'overige',name:'Overige',keys:[],intro:'Chips, koffie, cadeauverpakkingen en andere handige extra’s.'},
+ {slug:'verhuur',name:'Verhuur',keys:['Verhuur'],accent:true,intro:'Huur een bakfrigo, koelaanhanger, tafels en ander feestmateriaal. Vraag gerust naar de mogelijkheden.'}
+];
+const knownKeys=new Set(shopGroups.flatMap(g=>g.keys));
+const groupOf=p=>{const k=keyOf(p);return shopGroups.find(g=>g.keys.includes(k))||shopGroups.find(g=>g.slug==='overige')};
+const groupBySlug=slug=>slug==='alcohol'?{slug:'alcohol',name:'Alcohol',keys:alcoholSections,intro:'Bier, wijn, bubbels en sterke drank. Alcohol verkopen we enkel aan wie oud genoeg is.'}:shopGroups.find(g=>g.slug===slug);
+const inGroup=(p,g)=>g.slug==='overige'?!knownKeys.has(keyOf(p)):g.keys.includes(keyOf(p));
+function brandsOf(items){const m=new Map();items.forEach(p=>{const k=brandKey(p.brand);if(!k)return;const e=m.get(k)||{key:k,names:{},n:0};e.n++;e.names[p.brand]=(e.names[p.brand]||0)+1;m.set(k,e)});return [...m.values()].map(e=>({key:e.key,n:e.n,name:Object.entries(e.names).sort((a,b)=>b[1]-a[1])[0][0]}))}
+function buildCatbar(){
+ const bar=$('catbar');if(!bar)return;
+ bar.innerHTML='<ul>'+shopGroups.map(g=>{
+  const items=catalog.filter(p=>inGroup(p,g));if(!items.length)return '';
+  const brands=brandsOf(items).sort((a,b)=>b.n-a.n||alphabet.compare(a.name,b.name)).slice(0,10).sort((a,b)=>alphabet.compare(a.name,b.name));
+  const menu=brands.length>1?'<div class="catMenu"><div><strong>Merken</strong>'+brands.map(b=>'<a href="#/assortiment/'+g.slug+'/'+b.key+'">'+esc(b.name)+'</a>').join('')+'</div>'+'<a class="catAll" href="#/assortiment/'+g.slug+'">Alles in '+esc(g.name.toLowerCase())+' ('+items.length+')</a></div>':'';
+  return '<li class="'+(g.accent?'accent':'')+(menu?' hasMenu':'')+'"><a class="catLink" data-slug="'+g.slug+'" href="#/assortiment/'+g.slug+'">'+esc(g.name)+(menu?'<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg>':'')+'</a>'+menu+'</li>';
+ }).join('')+'</ul>';
+ bar.addEventListener('click',e=>{if(e.target.closest('.catMenu a'))document.activeElement?.blur()});
+}
+function markCatbar(slug){document.querySelectorAll('#catbar .catLink').forEach(a=>a.toggleAttribute('aria-current',a.dataset.slug===slug))}
 let activeCategory;
-function assortment(){
- meta('Assortiment','Doorzoek het assortiment van VR Drinks op merk, categorie en verpakking.');
- const select=(id,label,values)=>'<label>'+label+'<select id="'+id+'"><option value="">Alle</option>'+values.map(([v,l])=>'<option value="'+v+'">'+l+'</option>').join('')+'</select></label>';
- const names=[...new Set([...departments.map(([name])=>name),...catalog.map(department)])].filter(name=>catalog.some(p=>department(p)===name));
- const categoryOptions=names.flatMap(name=>name==='Alcohol'?[[name,name],...alcoholSections.map(label=>[label,'↳ '+label])]:[[name,name]]);
- $('shop').innerHTML='<h1>Assortiment</h1>'+demo+'<div class="filters"><label>Zoeken<input type="search" id="q" placeholder="Zoek een product"></label>'+select('brand','Merk',options(catalog.map(p=>p.brand)))+select('kind','Categorie',categoryOptions)+select('pack','Verpakking',options(catalog.map(p=>p.packType)))+'</div><p class="note result-count" id="resultCount" role="status"></p><div id="results"></div>';
+function assortment(slug,brand){
+ const group=slug?groupBySlug(slug):null;
+ const brandName=brand?(brandsOf(catalog.filter(p=>brandKey(p.brand)===brand))[0]||{}).name:'';
+ const title=group?(brandName?brandName+' · '+group.name:group.name):(brandName||'Assortiment');
+ meta(title,group?group.intro:'Doorzoek het assortiment van VR Drinks op merk, categorie en verpakking.');
+ markCatbar(group?group.slug:'');
+ const scope=group?catalog.filter(p=>inGroup(p,group)):catalog;
+ const select=(id,label,values)=>'<label>'+label+'<select id="'+id+'"><option value="">Alle</option>'+values.map(([v,l])=>'<option value="'+v+'">'+esc(l)+'</option>').join('')+'</select></label>';
+ const names=[...new Set([...departments.map(([name])=>name),...catalog.map(department)])].filter(name=>scope.some(p=>department(p)===name));
+ const brandOptions=brandsOf(scope).sort((a,b)=>alphabet.compare(a.name,b.name)).map(b=>[b.key,b.name]);
+ const crumbs='<nav class="crumbs" aria-label="Kruimelpad"><a href="#/">Home</a><span>/</span>'+(group?'<a href="#/assortiment">Assortiment</a><span>/</span>'+(brandName?'<a href="#/assortiment/'+group.slug+'">'+esc(group.name)+'</a><span>/</span><span aria-current="page">'+esc(brandName)+'</span>':'<span aria-current="page">'+esc(group.name)+'</span>'):'<span aria-current="page">Assortiment</span>')+'</nav>';
+ const intro=group?group.intro:'Frisdrank, water, bier, wijn, sterke drank en meer. Kies hierboven een categorie of zoek meteen je favoriete drankje.';
+ $('shop').innerHTML=crumbs+'<div class="shopHead"><h1>'+esc(title)+'</h1><div><p>'+esc(intro)+'</p>'+demo+'</div></div><div class="filters"><label>Zoeken<input type="search" id="q" placeholder="Zoek een product"></label>'+select('brand','Merk',brandOptions)+select('pack','Verpakking',options(scope.map(p=>p.packType)))+'</div><p class="note result-count" id="resultCount" role="status"></p><div id="results"></div>';
+ filters.kind='';
+ if(brand)filters.brand=brand;else if(!brandOptions.some(([k])=>k===filters.brand))filters.brand='';
+ if(filters.pack&&!scope.some(p=>p.packType===filters.pack))filters.pack='';
  function list(){
   const query=searchText(filters.q);
-  const found=catalog.filter(p=>{
+  const found=scope.filter(p=>{
    const name=department(p),sub=name==='Alcohol'?alcoholSection(p):'';
-   return (!filters.kind||filters.kind===name||filters.kind===sub)&&(!filters.brand||p.brand===filters.brand)&&(!filters.pack||p.packType===filters.pack)&&searchText([nameOf(p),p.label,p.brand,p.sku,name,sub,p.origin||'',p.origin?originName[p.origin]:''].join(' ')).includes(query);
+   return (!filters.brand||brandKey(p.brand)===filters.brand)&&(!filters.pack||p.packType===filters.pack)&&searchText([nameOf(p),p.label,p.brand,p.sku,name,sub,p.origin||'',p.origin?originName[p.origin]:''].join(' ')).includes(query);
   }).sort((a,b)=>alphabet.compare(sortName(a),sortName(b))||alphabet.compare(a.label,b.label)||alphabet.compare(a.origin||'',b.origin||''));
   $('resultCount').textContent=found.length+(found.length===1?' artikel':' artikelen');
   $('results').innerHTML=names.map(name=>{
@@ -79,12 +135,14 @@ function assortment(){
    if(!items.length)return '';
    const content=name==='Alcohol'?alcoholSections.map(label=>{
     const subset=items.filter(p=>alcoholSection(p)===label);
-    return subset.length?'<h3 class="subheading">'+label+'</h3>'+productGrid(subset):'';
+    return subset.length?(group&&group.keys.length===1?'':'<h3 class="subheading">'+label+'</h3>')+productGrid(subset):'';
    }).join(''):productGrid(items);
-   return '<section class="department"><h2 class="department-name">'+name+'</h2>'+content+'</section>';
+   const heading=group&&names.length===1?'':'<h2 class="department-name">'+name+'</h2>';
+   return '<section class="department">'+heading+content+'</section>';
   }).join('')||'<p>Geen producten gevonden.</p>';
+  bindQuickAdd($('results'));
  }
- Object.keys(filters).forEach(k=>{const el=$(k);el.value=filters[k];el.oninput=()=>{filters[k]=el.value;list()}});list()
+ ['q','brand','pack'].forEach(k=>{const el=$(k);el.value=filters[k];el.oninput=()=>{filters[k]=el.value;list()}});list()
 }
 function detail(p){
  meta(nameOf(p)+' · '+p.label,nameOf(p)+' · '+p.label+'. Bekijk de prijs bij VR Drinks.');
@@ -107,17 +165,16 @@ function basket(checkout=false){
 function route(){const parts=location.hash.slice(1).split('/').filter(Boolean),was=home;
  if(parts[0]==='ontdek'){location.replace('#/winkels');return}
  home=false;
- const front=!parts.length||parts[0]==='winkels';$('landing').hidden=!front;
+ const front=!parts.length||parts[0]==='winkels';$('landing').hidden=!front;if($('catbar'))$('catbar').hidden=front||home;if(parts[0]!=='assortiment')markCatbar('');
  if(was&&!home)storedY=scrollY;document.body.classList.toggle('home',home);$('home').hidden=!home;$('shop').hidden=home;
  if(front){cancelAnimationFrame(frame);frame=0;$('shop').hidden=true;meta('Drank voor elk moment.','Ontdek VR Drinks en bekijk de adres en de openingsuren van de winkel in Baasrode.');if(parts[0]==='winkels')requestAnimationFrame(()=>$('winkels').scrollIntoView());else window.scrollTo(0,0);if(!window.VR_HERO_EL){window.VR_HERO_EL=document.querySelector('.vh');import('./hero/vr-hero.js?v=splash9').catch(()=>{})}return}
  if(home){meta('Drankenwinkel','Ontdek Coca-Cola, Fanta en Sprite in de interactieve drankenwinkel van VR Drinks.');window.scrollTo(0,storedY);start()}
  else{cancelAnimationFrame(frame);frame=0;window.scrollTo(0,0);
  if(parts[0]==='assortiment'){
-  const category=landingCategories.get(parts[1]);
-  if(category)Object.assign(filters,{q:'',brand:'',kind:category,pack:''});
-  else if(activeCategory)filters.kind='';
-  activeCategory=category;
-  assortment();
+  const slug=parts[1]&&groupBySlug(parts[1])?parts[1]:'',brand=slug&&parts[2]?parts[2]:'';
+  const key=slug+'/'+brand;if(key!==activeCategory)Object.assign(filters,{q:'',brand:'',kind:'',pack:''});
+  activeCategory=key;
+  assortment(slug,brand);
  }else if(parts[0]==='product'&&byId(parts[1]))detail(byId(parts[1]));else if(parts[0]==='winkelwagen')basket();else if(parts[0]==='afrekenen'&&window.vrCheckout)window.vrCheckout();else if(parts[0]==='account'&&window.vrAccount)window.vrAccount(parts);else if(parts[0]==='bestelling'&&window.vrOrder&&parts[1])window.vrOrder(parts[1]);else $('shop').innerHTML='<h1>Pagina niet gevonden</h1>'+cartLink;
  $('shop').setAttribute('tabindex','-1');$('shop').focus({preventScroll:true})}
 }
@@ -188,7 +245,7 @@ function tick(now){frame=0;if(!home||document.hidden)return;const dt=Math.min(.0
 }
 function start(){if(!frame&&!document.hidden){previous=performance.now();frame=requestAnimationFrame(tick)}}
 document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0}else if(home)start()});
-window.addEventListener('hashchange',route);heroText(0,0);updateCount();route();
+buildCatbar();window.addEventListener('hashchange',route);heroText(0,0);updateCount();route();
 async function loadStock(){try{const r=await fetch('stock.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const data=await r.json();
  for(const p of catalog){const it=data.items&&data.items[p.id];if(!it||!it.managestock)continue;p.stock=it.stock;p.available=it.stock>0}
  cart=cart.filter(r=>byId(r.id)&&byId(r.id).available);cart.forEach(r=>{const m=maxOf(byId(r.id));if(r.qty>m)r.qty=m});saveCart();
