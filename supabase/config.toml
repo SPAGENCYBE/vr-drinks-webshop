@@ -1,0 +1,9 @@
+project_id = "zuirkmrdscmoonlwpwkj"
+
+# De gebruiker wordt in de functie zelf gecontroleerd (werkt met de nieuwe publishable keys).
+[functions.checkout]
+verify_jwt = false
+
+# Mollie stuurt geen gebruikerstoken mee.
+[functions.mollie-webhook]
+verify_jwt = false

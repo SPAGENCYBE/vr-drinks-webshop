@@ -13,6 +13,7 @@ try{const saved=JSON.parse(localStorage.getItem('vrd-cart-v1'));if(Array.isArray
 const maxOf=p=>p.stock!=null&&p.stock>0?Math.min(999,p.stock):999;
 const priceOf=r=>byId(r.id).packs.find(b=>b.units===r.units).price;
 const subtotal=()=>cart.reduce((s,r)=>s+priceOf(r)*r.qty,0);
+const depositTotal=()=>cart.reduce((s,r)=>{const p=byId(r.id);return s+(p&&p.deposit&&p.deposit.price>0?p.deposit.price*r.qty:0)},0);
 function saveCart(){try{localStorage.setItem('vrd-cart-v1',JSON.stringify(cart))}catch{}updateCount()}
 function updateCount(){const amount=cart.reduce((s,r)=>s+r.qty,0);$('count').textContent=amount;document.querySelector('.bag').setAttribute('aria-label','Winkelwagen, '+amount+(amount===1?' verkoopeenheid':' verkoopeenheden'))}
 function meta(t,d){document.title=t+' | VR Drinks';document.querySelector('meta[name="description"]').content=d}
@@ -31,7 +32,7 @@ function photo(p, miniature=false){
  return '<div class="'+frame+'">'+content+flag(p)+'</div>';
 }
 const cartLink='<a class="primary" href="#/assortiment">Naar het assortiment</a>';
-const demo='<p class="note">Testwinkel · Assortiment en prijzen van 22 november 2026.</p>';
+const demo='<p class="note">Prijzen incl. btw. Leeggoed wordt apart aangerekend.</p>';
 function options(items){return [...new Set(items.filter(Boolean))].sort((a,b)=>a.localeCompare(b,'nl')).map(v=>[v,v])}
 const departments=[
  ['Frisdrank',['Frisdrank']], ['Water',['Waters']], ['Sap & fruitdrank',['Fruitsap']],
@@ -87,7 +88,7 @@ function assortment(){
 }
 function detail(p){
  meta(nameOf(p)+' · '+p.label,nameOf(p)+' · '+p.label+'. Bekijk de prijs bij VR Drinks.');
- $('shop').innerHTML='<a class="crumb" href="#/assortiment">Alle dranken</a><div class="detail">'+photo(p)+'<div><div class="eyebrow">'+department(p)+'</div><h1>'+nameOf(p)+'</h1>'+(p.taste?'<p>'+p.taste+'</p>':'')+demo+'<form class="order"><label class="field">Verpakking<select id="units">'+p.packs.map(b=>'<option value="'+b.units+'">'+packName(p,b.units)+' — '+money(b.price)+'</option>').join('')+'</select></label><label class="field">Aantal verkoopeenheden<input id="qty" type="number" min="1" max="999" step="1" required value="1"></label><output class="price" id="line"></output><button class="primary">In winkelwagen</button></form></div></div>';
+ $('shop').innerHTML='<a class="crumb" href="#/assortiment">Alle dranken</a><div class="detail">'+photo(p)+'<div><div class="eyebrow">'+department(p)+'</div><h1>'+nameOf(p)+'</h1>'+(p.taste?'<p>'+p.taste+'</p>':'')+(p.deposit&&p.deposit.price>0?'<p class="note">+ '+money(p.deposit.price)+' leeggoed ('+esc(p.deposit.label.replace(/^Leeggoed\s*/i,''))+')</p>':'')+demo+'<form class="order"><label class="field">Verpakking<select id="units">'+p.packs.map(b=>'<option value="'+b.units+'">'+packName(p,b.units)+' — '+money(b.price)+'</option>').join('')+'</select></label><label class="field">Aantal verkoopeenheden<input id="qty" type="number" min="1" max="999" step="1" required value="1"></label><output class="price" id="line"></output><button class="primary">In winkelwagen</button></form></div></div>';
  if(!p.available){document.querySelector('.order').outerHTML='<p><strong>Uitverkocht</strong> · '+p.label+' · '+money(p.packs[0].price)+'</p><a class="under" href="#/assortiment">Terug naar het assortiment</a>';return}
  const max=maxOf(p);$('qty').max=max;if(p.stock!=null)document.querySelector('.order').insertAdjacentHTML('afterbegin','<p class="stock'+(p.stock<=5?' low':'')+'">'+(p.stock<=5?'Nog '+p.stock+' beschikbaar':'Op voorraad')+'</p>');
  const b=()=>p.packs.find(b=>b.units===+$('units').value);
@@ -99,7 +100,7 @@ function basket(checkout=false){
  $('shop').innerHTML='<h1>'+(checkout?'Afrekenen (demo)':'Winkelwagen')+'</h1>'+demo;
  if(!cart.length){$('shop').innerHTML+='<p class="empty">Je winkelwagen is leeg.</p>'+cartLink;return}
  const rows=cart.map((r,i)=>{const p=byId(r.id);return '<div class="row">'+photo(p,true)+'<div class="desc"><a href="'+productUrl(p)+'"><strong>'+nameOf(p)+'</strong></a><p>'+packName(p,r.units)+' · '+money(priceOf(r))+'</p></div>'+(checkout?'<span>'+r.qty+' ×</span>':'<label>Aantal <input data-qty="'+i+'" aria-label="Aantal '+nameOf(p)+' '+packName(p,r.units)+'" type="number" min="1" max="'+maxOf(p)+'" value="'+r.qty+'"></label>')+'<b>'+money(r.qty*priceOf(r))+'</b>'+(checkout?'':'<button data-remove="'+i+'">Verwijder</button>')+'</div>'}).join('');
- $('shop').innerHTML+=rows+'<div class="summary"><strong class="price">Producttotaal '+money(subtotal())+'</strong>'+(checkout?'<p>Dit is het einde van de testbestelling. Betaling en verzending zijn uitgeschakeld.</p><a class="pill" href="#/winkelwagen">Terug naar de winkelwagen</a>':'<a class="primary" href="#/afrekenen">Afrekenen</a><a class="under" href="#/assortiment">Verder winkelen</a>')+'</div>';
+ $('shop').innerHTML+=rows+'<div class="summary"><strong class="price">Producten '+money(subtotal())+'</strong>'+(depositTotal()?'<span>Leeggoed '+money(depositTotal())+'</span>':'')+(checkout?'<p>Dit is het einde van de testbestelling. Betaling en verzending zijn uitgeschakeld.</p><a class="pill" href="#/winkelwagen">Terug naar de winkelwagen</a>':'<a class="primary" href="#/afrekenen">Afrekenen</a><a class="under" href="#/assortiment">Verder winkelen</a>')+'</div>';
  $('shop').querySelectorAll('[data-qty]').forEach(el=>el.onchange=()=>{const i=+el.dataset.qty;if(!el.checkValidity()){el.reportValidity();el.value=cart[i].qty;return}cart[i].qty=+el.value;saveCart();basket();$('shop').querySelector('[data-qty="'+i+'"]').focus()});
  $('shop').querySelectorAll('[data-remove]').forEach(el=>el.onclick=()=>{cart.splice(+el.dataset.remove,1);saveCart();basket();$('shop').querySelector('button,a')?.focus()});
 }
@@ -115,7 +116,7 @@ function route(){const parts=location.hash.slice(1).split('/').filter(Boolean),w
   else if(activeCategory)filters.kind='';
   activeCategory=category;
   assortment();
- }else if(parts[0]==='product'&&byId(parts[1]))detail(byId(parts[1]));else if(parts[0]==='winkelwagen'||parts[0]==='afrekenen')basket(parts[0]==='afrekenen');else $('shop').innerHTML='<h1>Pagina niet gevonden</h1>'+cartLink;
+ }else if(parts[0]==='product'&&byId(parts[1]))detail(byId(parts[1]));else if(parts[0]==='winkelwagen')basket();else if(parts[0]==='afrekenen'&&window.vrCheckout)window.vrCheckout();else if(parts[0]==='account'&&window.vrAccount)window.vrAccount(parts);else if(parts[0]==='bestelling'&&window.vrOrder&&parts[1])window.vrOrder(parts[1]);else $('shop').innerHTML='<h1>Pagina niet gevonden</h1>'+cartLink;
  $('shop').setAttribute('tabindex','-1');$('shop').focus({preventScroll:true})}
 }
 document.querySelector('.hours-jump').onclick=()=>{$('winkels').focus({preventScroll:true});$('winkels').scrollIntoView({behavior:reduced.matches?'instant':'smooth'})};
@@ -189,7 +190,7 @@ window.addEventListener('hashchange',route);heroText(0,0);updateCount();route();
 async function loadStock(){try{const r=await fetch('stock.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const data=await r.json();
  for(const p of catalog){const it=data.items&&data.items[p.id];if(!it||!it.managestock)continue;p.stock=it.stock;p.available=it.stock>0}
  cart=cart.filter(r=>byId(r.id)&&byId(r.id).available);cart.forEach(r=>{const m=maxOf(byId(r.id));if(r.qty>m)r.qty=m});saveCart();
- if(!home&&/^#\/(assortiment|product|winkelwagen|afrekenen)/.test(location.hash)){const y=scrollY;route();scrollTo(0,y)}}catch{}}
+ if(!home&&/^#\/(assortiment|product|winkelwagen)/.test(location.hash)){const y=scrollY;route();scrollTo(0,y)}}catch{}}
 loadStock();
 function loadScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=reject;document.head.append(s)})}
 async function loadScene(){try{await loadScript('three.min.js');await Promise.all([loadScript('impact.js?v=3'),loadScript('scene.js?v=impact3')]);scene=await window.createStudio(gl);fallback.hidden=true;gl.addEventListener('webglcontextlost',e=>{e.preventDefault();scene=null;fallback.hidden=false;gl.style.opacity=0});}catch{scene=null;fallback.hidden=false}}

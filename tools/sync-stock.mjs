@@ -121,7 +121,27 @@ for (const p of products) {
   if (e?.image && !photoByName.has(nameKey(p.description))) photoByName.set(nameKey(p.description), e);
 }
 
-const catalog = [], stockItems = {}, report = { nieuw: [], zonderFoto: [] };
+// Leeggoed: per merk + verpakking het leeggoedartikel uit Onlinefact (volle bak/fles/vat).
+const firstWord = n => ascii(n).toLowerCase().replace(/^leeggoed\s+/, '').split(/[\s']+/)[0];
+const depositIndex = new Map(), depositLoose = new Map();
+for (const p of products) {
+  const d = String(p.description ?? '');
+  if (!/^leeggoed/i.test(d) || /lege bak/i.test(d)) continue;
+  const price = Math.round((num(p.price_incl) ?? 0) * 100);
+  if (price <= 0) continue;
+  const q = parse(d);
+  const dep = { ref: p.reference, label: d.replace(/\s+/g, ' ').trim(), price, tax: num(p.tax) ?? 21 };
+  depositIndex.set(`${firstWord(q.name)}|${q.n}|${q.vol}|${q.container}`, dep);
+  const loose = `${firstWord(q.name)}|${q.n}|${q.container}`;
+  depositLoose.set(loose, depositLoose.has(loose) ? null : dep);   // alleen als eenduidig
+}
+function depositFor(parsed) {
+  if (!['bak', 'fles', 'vat'].includes(parsed.container)) return null;
+  const w = firstWord(parsed.name);
+  return depositIndex.get(`${w}|${parsed.n}|${parsed.vol}|${parsed.container}`) ?? depositLoose.get(`${w}|${parsed.n}|${parsed.container}`) ?? null;
+}
+
+const catalog = [], stockItems = {}, report = { nieuw: [], zonderFoto: [], zonderLeeggoed: [] };
 const ids = new Set();
 for (const p of products) {
   if (!yes(p.webshop) || yes(p.endoflife)) continue;
@@ -142,6 +162,10 @@ for (const p of products) {
     available: true,
     sku: p.reference,
   };
+  item.tax = num(p.tax) ?? 21;
+  const dep = depositFor(parsed);
+  if (dep) item.deposit = dep;
+  else if (['bak', 'fles', 'vat'].includes(parsed.container)) report.zonderLeeggoed.push(`${item.title} · ${label}`);
   if (ids.has(item.id)) item.id += '-' + p.reference;
   ids.add(item.id);
   if (parsed.origin) item.origin = parsed.origin;
@@ -175,6 +199,8 @@ const lines = [
   `- Met foto: ${catalog.filter(c => c.image).length}, zonder foto: ${catalog.filter(c => !c.image).length}`,
   tracked ? `- Uitverkocht: ${Object.values(stockItems).filter(i => i.managestock && i.stock <= 0).length}` : '- **Voorraad:** staat overal op 0 in Onlinefact; de webshop toont niets als uitverkocht.',
   report.nieuw.length ? `\n**Nieuw (nog niet verrijkt, ${report.nieuw.length}):**\n` + report.nieuw.map(x => `- ${x}`).join('\n') : '',
+  `- Met leeggoed: ${catalog.filter(c => c.deposit).length}`,
+  report.zonderLeeggoed.length ? `\n**Bak/fles/vat zonder leeggoed in Onlinefact (${report.zonderLeeggoed.length}):**\n` + report.zonderLeeggoed.map(x => `- ${x}`).join('\n') : '',
   report.zonderFoto.length ? `\n**Zonder foto (${report.zonderFoto.length}):**\n` + report.zonderFoto.map(x => `- ${x}`).join('\n') : '',
 ];
 console.log(lines.join('\n'));
