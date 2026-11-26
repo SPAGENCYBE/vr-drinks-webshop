@@ -27,7 +27,8 @@ window.catalog = [
   "variant": "Original Taste",
   "volume": 330,
   "wrap": "art/original.jpg",
-  "color": "#c50922"
+  "color": "#c50922",
+  "origin": "EU"
  },
  {
   "id": "coca-cola-zero",
@@ -56,7 +57,8 @@ window.catalog = [
   "variant": "Zero Sugar",
   "volume": 330,
   "wrap": "art/zero.jpg",
-  "color": "#b50d24"
+  "color": "#b50d24",
+  "origin": "EU"
  },
  {
   "id": "fanta-orange",
@@ -85,7 +87,8 @@ window.catalog = [
   "variant": "Orange",
   "volume": 330,
   "wrap": "art/fanta-330ml.jpg",
-  "color": "#ee740e"
+  "color": "#ee740e",
+  "origin": "EU"
  },
  {
   "id": "sprite",
@@ -114,7 +117,8 @@ window.catalog = [
   "variant": "Lemon-Lime",
   "volume": 330,
   "wrap": "art/sprite-330ml.jpg",
-  "color": "#008b59"
+  "color": "#008b59",
+  "origin": "EU"
  },
  {
   "id": "vr-2252",
@@ -964,7 +968,8 @@ window.catalog = [
   "sku": "01013304",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Coca-Cola-Cherry-330ml-1.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Coca-Cola-Cherry-330ml-1.jpg",
+  "origin": "EU"
  },
  {
   "id": "vr-2136",
@@ -989,7 +994,8 @@ window.catalog = [
   "sku": "01013305",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-vanilla-blik33cl-goedkoopdrank-1.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-vanilla-blik33cl-goedkoopdrank-1.jpg",
+  "origin": "EU"
  },
  {
   "id": "vr-3333",
@@ -1000,11 +1006,11 @@ window.catalog = [
   ],
   "brand": "Coca-Cola",
   "kind": "Frisdrank",
-  "packType": "Overig",
-  "label": "Per verkoopeenheid",
+  "packType": "Tray",
+  "label": "Tray van 24 × 33 cl",
   "packs": [
    {
-    "units": 1,
+    "units": 24,
     "price": 2100
    }
   ],
@@ -1014,7 +1020,8 @@ window.catalog = [
   "sku": "P444",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2023/11/052044VIGNETTES.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2023/11/052044VIGNETTES.jpg",
+  "origin": "EU"
  },
  {
   "id": "vr-2319",
@@ -1440,7 +1447,8 @@ window.catalog = [
   "sku": "01023304",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/fanta-exotic-blik33cl-goedkoopdrank.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/fanta-exotic-blik33cl-goedkoopdrank.jpg",
+  "origin": "EU"
  },
  {
   "id": "vr-2918",
@@ -1465,7 +1473,8 @@ window.catalog = [
   "sku": "P375",
   "glow": "#e9e6e1",
   "taste": "De foto toont de sinaasappelsmaak uit de gemengde tray.",
-  "imageSource": "https://www.coca-cola.com/nl/nl/brands/fanta"
+  "imageSource": "https://www.coca-cola.com/nl/nl/brands/fanta",
+  "origin": "EU"
  },
  {
   "id": "vr-2146",
@@ -1490,7 +1499,8 @@ window.catalog = [
   "sku": "01023303",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/408a2b4f-f018-11ee-9b69-02cc60c61b69.jpg?v=1791228533"
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/408a2b4f-f018-11ee-9b69-02cc60c61b69.jpg?v=1791228533",
+  "origin": "EU"
  },
  {
   "id": "vr-2154",
@@ -1515,7 +1525,8 @@ window.catalog = [
   "sku": "01023305",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/fanta-strawberry-kiwi-blik33cl-goedkoopdrank.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/fanta-strawberry-kiwi-blik33cl-goedkoopdrank.jpg",
+  "origin": "EU"
  },
  {
   "id": "vr-2302",
@@ -2936,7 +2947,8 @@ window.catalog = [
   "sku": "020115005",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/63eb0e9b-1908-11ef-9b69-02cc60c61b69.jpg?v=1730739182"
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/63eb0e9b-1908-11ef-9b69-02cc60c61b69.jpg?v=1730739182",
+  "origin": "EU"
  },
  {
   "id": "vr-2957",
@@ -2961,7 +2973,8 @@ window.catalog = [
   "sku": "020115001",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/6237e367-1908-11ef-9b69-02cc60c61b69.jpg?v=1730734672"
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/6237e367-1908-11ef-9b69-02cc60c61b69.jpg?v=1730734672",
+  "origin": "BE"
  },
  {
   "id": "vr-2250",
@@ -2986,7 +2999,8 @@ window.catalog = [
   "sku": "02015002",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-ZERO-PET-50cll-goedkoopdrank.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-ZERO-PET-50cll-goedkoopdrank.jpg",
+  "origin": "EU"
  },
  {
   "id": "vr-2955",
@@ -3011,7 +3025,8 @@ window.catalog = [
   "sku": "020115002",
   "glow": "#e9e6e1",
   "taste": "",
-  "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg"
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg",
+  "origin": "BE"
  },
  {
   "id": "vr-2877",
@@ -3612,5 +3627,1360 @@ window.catalog = [
   "glow": "#e9e6e1",
   "taste": "",
   "imageSource": "https://www.belgianbeerheaven.com/be/nl/thumbnail/detail/LDKp7/Westmalle-Tripel-33Cl---11189-1700062217.png"
+ },
+ {
+  "id": "coca-cola-zero-caffeine-01010010606033",
+  "sourceId": 3333,
+  "title": "Coca-Cola Zero Caffeine",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 700
+   }
+  ],
+  "available": true,
+  "image": "single/3333.webp",
+  "sku": "01010010606033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2023/11/052044VIGNETTES.jpg",
+  "origin": "EU"
+ },
+ {
+  "id": "coca-cola-original-taste-01010015124033",
+  "sourceId": 2144,
+  "title": "Coca-Cola Original Taste",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "Tray",
+  "label": "Tray van 24 × 33 cl",
+  "packs": [
+   {
+    "units": 24,
+    "price": 1900
+   }
+  ],
+  "available": true,
+  "image": "art/original.png",
+  "sku": "01010015124033",
+  "glow": "#eab2a6",
+  "taste": "De klassieke smaak van Coca-Cola, met fijne bubbels.",
+  "volume": 330,
+  "origin": "BE"
+ },
+ {
+  "id": "coca-cola-original-taste-01010015130033",
+  "sourceId": 2144,
+  "title": "Coca-Cola Original Taste",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "Tray",
+  "label": "Tray van 30 × 33 cl",
+  "packs": [
+   {
+    "units": 30,
+    "price": 2600
+   }
+  ],
+  "available": true,
+  "image": "art/original.png",
+  "sku": "01010015130033",
+  "glow": "#eab2a6",
+  "taste": "De klassieke smaak van Coca-Cola, met fijne bubbels.",
+  "volume": 330,
+  "origin": "BE"
+ },
+ {
+  "id": "coca-cola-zero-sugar-01010015224033",
+  "sourceId": 2138,
+  "title": "Coca-Cola Zero Sugar",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "Tray",
+  "label": "Tray van 24 × 33 cl",
+  "packs": [
+   {
+    "units": 24,
+    "price": 1900
+   }
+  ],
+  "available": true,
+  "image": "art/zero.png",
+  "sku": "01010015224033",
+  "glow": "#deb3af",
+  "taste": "De herkenbare smaak van Coca-Cola Zero Sugar.",
+  "volume": 330,
+  "origin": "BE"
+ },
+ {
+  "id": "coca-cola-zero-sugar-01010015230033",
+  "sourceId": 2138,
+  "title": "Coca-Cola Zero Sugar",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "Tray",
+  "label": "Tray van 30 × 33 cl",
+  "packs": [
+   {
+    "units": 30,
+    "price": 2350
+   }
+  ],
+  "available": true,
+  "image": "art/zero.png",
+  "sku": "01010015230033",
+  "glow": "#deb3af",
+  "taste": "De herkenbare smaak van Coca-Cola Zero Sugar.",
+  "volume": 330,
+  "origin": "BE"
+ },
+ {
+  "id": "pepsi-01010050106033",
+  "sourceId": 2246,
+  "title": "Pepsi",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Pepsi",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/2246.webp",
+  "sku": "01010050106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/12/717_6297.jpg"
+ },
+ {
+  "id": "pepsi-max-01010050206033",
+  "sourceId": 2276,
+  "title": "Pepsi Max",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Pepsi",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/2276.webp",
+  "sku": "01010050206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/96796416.jpg"
+ },
+ {
+  "id": "pepsi-max-lemon-01010050306033",
+  "sourceId": 2264,
+  "title": "Pepsi Max Lemon",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Pepsi",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/2264.webp",
+  "sku": "01010050306033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/11/pepsi.jpg"
+ },
+ {
+  "id": "7up-original-01010060106033",
+  "sourceId": 2273,
+  "title": "7UP Original",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "7UP",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 300
+   }
+  ],
+  "available": true,
+  "image": "single/2273.webp",
+  "sku": "01010060106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2017/01/7-up-blik33cl-goedkoopdrank.jpg"
+ },
+ {
+  "id": "7up-free-01010060206033",
+  "sourceId": 2252,
+  "title": "7UP Free",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "7UP",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/2252.webp",
+  "sku": "01010060206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/7_up_free_zero_sugar_blikjes_33cl_tray-228x228-1.jpg"
+ },
+ {
+  "id": "schweppes-indian-tonic-01010080108033",
+  "sourceId": 2267,
+  "title": "Schweppes Indian Tonic",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Schweppes",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "8 × 33 cl",
+  "packs": [
+   {
+    "units": 8,
+    "price": 900
+   }
+  ],
+  "available": true,
+  "image": "single/2267.webp",
+  "sku": "01010080108033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/schweppes_indian_tonic_blikjes_tray_33cl-228x228-1.jpg"
+ },
+ {
+  "id": "schweppes-agrum-01010080208033",
+  "sourceId": 2256,
+  "title": "Schweppes Agrum",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Schweppes",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "8 × 33 cl",
+  "packs": [
+   {
+    "units": 8,
+    "price": 900
+   }
+  ],
+  "available": true,
+  "image": "single/2256.webp",
+  "sku": "01010080208033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/03b1d33604941f396fa71fa9f477aa3b.jpg?v=1791228411"
+ },
+ {
+  "id": "schweppes-agrum-zero-01010080308033",
+  "sourceId": 2410,
+  "title": "Schweppes Agrum Zero",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Schweppes",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "8 × 33 cl",
+  "packs": [
+   {
+    "units": 8,
+    "price": 900
+   }
+  ],
+  "available": true,
+  "image": "single/2410.webp",
+  "sku": "01010080308033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/08/schweppes-agrumes-zero_fr.png"
+ },
+ {
+  "id": "gini-01010090106033",
+  "sourceId": 2258,
+  "title": "Gini",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Gini",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 600
+   }
+  ],
+  "available": true,
+  "image": "single/2258.webp",
+  "sku": "01010090106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/d60d09213f1752cfc2481e6734e94ef4.jpg?v=1791228467"
+ },
+ {
+  "id": "tropico-original-01010100106033",
+  "sourceId": 2507,
+  "title": "Tropico Original",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Tropico",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 400
+   }
+  ],
+  "available": true,
+  "image": "single/2507.webp",
+  "sku": "01010100106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/tropico_l_original.png"
+ },
+ {
+  "id": "tonissteiner-orange-01010110106033",
+  "sourceId": 2151,
+  "title": "Tönissteiner Orange",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Tönissteiner",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 600
+   }
+  ],
+  "available": true,
+  "image": "single/2151.webp",
+  "sku": "01010110106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/0fac97c0-190a-11ef-9b69-02cc60c61b69.jpg?v=1730731770"
+ },
+ {
+  "id": "tonissteiner-citroen-01010110206033",
+  "sourceId": 2152,
+  "title": "Tönissteiner Citroen",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Tönissteiner",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 600
+   }
+  ],
+  "available": true,
+  "image": "single/2152.webp",
+  "sku": "01010110206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/f50913bb-1909-11ef-9b69-02cc60c61b69.jpg?v=1730732334"
+ },
+ {
+  "id": "orangina-01010160106033",
+  "sourceId": 2504,
+  "title": "Orangina",
+  "categories": [
+   "Fruitsap"
+  ],
+  "brand": "Orangina",
+  "kind": "Fruitsap",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 450
+   }
+  ],
+  "available": true,
+  "image": "single/2504.webp",
+  "sku": "01010160106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/oragina.jpg2_.jpg"
+ },
+ {
+  "id": "crodo-oransoda-01010510104033",
+  "sourceId": 3073,
+  "title": "Crodo OranSoda",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Crodo",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "4 × 33 cl",
+  "packs": [
+   {
+    "units": 4,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/3073.webp",
+  "sku": "01010510104033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/OranSoda-Blik.webp"
+ },
+ {
+  "id": "crodo-lemonsoda-01010510204033",
+  "sourceId": 3074,
+  "title": "Crodo LemonSoda",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Crodo",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "4 × 33 cl",
+  "packs": [
+   {
+    "units": 4,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/3074.webp",
+  "sku": "01010510204033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/LemonSoda-Blik.webp"
+ },
+ {
+  "id": "crodo-lemonsoda-mojito-01010510304033",
+  "sourceId": 3075,
+  "title": "Crodo LemonSoda Mojito",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Crodo",
+  "kind": "Frisdrank",
+  "packType": "Pack",
+  "label": "4 × 33 cl",
+  "packs": [
+   {
+    "units": 4,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/3075.webp",
+  "sku": "01010510304033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://www.crodolemonsoda.be/wp-content/uploads/2026/01/LemonSoda-Mojito-Blik.webp"
+ },
+ {
+  "id": "coca-cola-original-taste-01020010109150",
+  "sourceId": 2957,
+  "title": "Coca-Cola Original Taste",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "PET",
+  "label": "PET-flessen · 9 × 1,5 L",
+  "packs": [
+   {
+    "units": 9,
+    "price": 1800
+   }
+  ],
+  "available": true,
+  "image": "single/2957.webp",
+  "sku": "01020010109150",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/6237e367-1908-11ef-9b69-02cc60c61b69.jpg?v=1730734672",
+  "origin": "EU"
+ },
+ {
+  "id": "coca-cola-01020010112050",
+  "sourceId": 2645,
+  "title": "Coca-Cola",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "PET",
+  "label": "PET-flessen · 12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1100
+   }
+  ],
+  "available": true,
+  "image": "single/2645.webp",
+  "sku": "01020010112050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/63eb0e9b-1908-11ef-9b69-02cc60c61b69.jpg?v=1730739182",
+  "origin": "EU"
+ },
+ {
+  "id": "coca-cola-zero-sugar-01020010208150",
+  "sourceId": 2955,
+  "title": "Coca-Cola Zero Sugar",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "PET",
+  "label": "PET-flessen · 8 × 1,5 L",
+  "packs": [
+   {
+    "units": 8,
+    "price": 1550
+   }
+  ],
+  "available": true,
+  "image": "single/2955.webp",
+  "sku": "01020010208150",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg",
+  "origin": "EU"
+ },
+ {
+  "id": "coca-cola-zero-sugar-01020010209150",
+  "sourceId": 2955,
+  "title": "Coca-Cola Zero Sugar",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "PET",
+  "label": "PET-flessen · 9 × 1,5 L",
+  "packs": [
+   {
+    "units": 9,
+    "price": 1800
+   }
+  ],
+  "available": true,
+  "image": "single/2955.webp",
+  "sku": "01020010209150",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2021/07/zero-1.5.jpg",
+  "origin": "EU"
+ },
+ {
+  "id": "coca-cola-zero-sugar-01020010218150",
+  "sourceId": 2250,
+  "title": "Coca-Cola Zero Sugar",
+  "categories": [
+   "Frisdrank"
+  ],
+  "brand": "Coca-Cola",
+  "kind": "Frisdrank",
+  "packType": "PET",
+  "label": "PET-flessen · 18 × 50 cl",
+  "packs": [
+   {
+    "units": 18,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2250.webp",
+  "sku": "01020010218150",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/coca-cola-ZERO-PET-50cll-goedkoopdrank.jpg",
+  "origin": "EU"
+ },
+ {
+  "id": "monster-energy-original-02010190112050",
+  "sourceId": 2114,
+  "title": "Monster Energy Original",
+  "categories": [
+   "Energiedrank"
+  ],
+  "brand": "Monster",
+  "kind": "Energiedrank",
+  "packType": "Pack",
+  "label": "12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2114.webp",
+  "sku": "02010190112050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://web-assests.monsterenergy.com/mnst/b66b4956-e22e-4024-b0e0-302e44d93e3c.png"
+ },
+ {
+  "id": "monster-energy-zero-02010190212050",
+  "sourceId": 2360,
+  "title": "Monster Energy Zero",
+  "categories": [
+   "Energiedrank"
+  ],
+  "brand": "Monster",
+  "kind": "Energiedrank",
+  "packType": "Pack",
+  "label": "12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2360.webp",
+  "sku": "02010190212050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://web-assests.monsterenergy.com/mnst/09f29012-5632-40f6-83c1-a08e9f6ae794.png"
+ },
+ {
+  "id": "monster-ultra-white-02010191112050",
+  "sourceId": 2353,
+  "title": "Monster Ultra White",
+  "categories": [
+   "Energiedrank"
+  ],
+  "brand": "Monster",
+  "kind": "Energiedrank",
+  "packType": "Pack",
+  "label": "12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2353.webp",
+  "sku": "02010191112050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://web-assests.monsterenergy.com/mnst/48e2b7d0-1310-4b35-96e3-94f69b12691a.png"
+ },
+ {
+  "id": "monster-ultra-paradise-02010191212050",
+  "sourceId": 2288,
+  "title": "Monster Ultra Paradise",
+  "categories": [
+   "Energiedrank"
+  ],
+  "brand": "Monster",
+  "kind": "Energiedrank",
+  "packType": "Pack",
+  "label": "12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2288.webp",
+  "sku": "02010191212050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://web-assests.monsterenergy.com/mnst/097fd2ef-58f2-41a8-9529-61e6ead14f26.png"
+ },
+ {
+  "id": "monster-juiced-mango-loco-02010192112050",
+  "sourceId": 2116,
+  "title": "Monster Juiced Mango Loco",
+  "categories": [
+   "Energiedrank"
+  ],
+  "brand": "Monster",
+  "kind": "Energiedrank",
+  "packType": "Pack",
+  "label": "12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2116.webp",
+  "sku": "02010192112050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://web-assests.monsterenergy.com/mnst/2c49358d-9f09-4f92-813b-93d2bbae9d82.png"
+ },
+ {
+  "id": "monster-juiced-pipeline-punch-02010192212050",
+  "sourceId": 2382,
+  "title": "Monster Juiced Pipeline Punch",
+  "categories": [
+   "Energiedrank"
+  ],
+  "brand": "Monster",
+  "kind": "Energiedrank",
+  "packType": "Pack",
+  "label": "12 × 50 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 1700
+   }
+  ],
+  "available": true,
+  "image": "single/2382.webp",
+  "sku": "02010192212050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://web-assests.monsterenergy.com/mnst/9dabce75-3952-4a8e-840f-d0341c9b1ab1.png"
+ },
+ {
+  "id": "spa-reine-03020230106033",
+  "sourceId": 2286,
+  "title": "Spa Reine",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Spa",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 300
+   }
+  ],
+  "available": true,
+  "image": "single/2286.webp",
+  "sku": "03020230106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa-reine-blauw-33cl-pet-palstic-flesjes-228x228-1.jpg"
+ },
+ {
+  "id": "spa-reine-03020230108050",
+  "sourceId": 2339,
+  "title": "Spa Reine",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Spa",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "8 × 50 cl",
+  "packs": [
+   {
+    "units": 8,
+    "price": 450
+   }
+  ],
+  "available": true,
+  "image": "single/2339.webp",
+  "sku": "03020230108050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/Spa_Blauw_Reine_50cl_Pet-228x228-1.jpg"
+ },
+ {
+  "id": "spa-reine-03020230112033",
+  "sourceId": 2286,
+  "title": "Spa Reine",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Spa",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "12 × 33 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 600
+   }
+  ],
+  "available": true,
+  "image": "single/2286.webp",
+  "sku": "03020230112033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa-reine-blauw-33cl-pet-palstic-flesjes-228x228-1.jpg"
+ },
+ {
+  "id": "spa-intense-03020230206033",
+  "sourceId": 2376,
+  "title": "Spa Intense",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Spa",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/2376.webp",
+  "sku": "03020230206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://img.discountoffice.cloud/OdRm2gdjxhh-Cer7FvKPsiza_0ZKEDXzlLDspjrwd30/bg:ffffff/rs:fit:640:480:1:1/g:ce/bG9jYWw6Ly8vZGlzY291bnQtd2Vic2l0ZS9wcm9kdWN0SW1hZ2VzLzdjLzkvUTE0MzMwNDEtMS5qcGc.webp"
+ },
+ {
+  "id": "spa-intense-03020230206050",
+  "sourceId": 2308,
+  "title": "Spa Intense",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Spa",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "6 × 50 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 350
+   }
+  ],
+  "available": true,
+  "image": "single/2308.webp",
+  "sku": "03020230206050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/spa_rood_flesjes_50cl-228x228-1.jpg"
+ },
+ {
+  "id": "spa-intense-03020230212033",
+  "sourceId": 2376,
+  "title": "Spa Intense",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Spa",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "12 × 33 cl",
+  "packs": [
+   {
+    "units": 12,
+    "price": 600
+   }
+  ],
+  "available": true,
+  "image": "single/2376.webp",
+  "sku": "03020230212033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://img.discountoffice.cloud/OdRm2gdjxhh-Cer7FvKPsiza_0ZKEDXzlLDspjrwd30/bg:ffffff/rs:fit:640:480:1:1/g:ce/bG9jYWw6Ly8vZGlzY291bnQtd2Vic2l0ZS9wcm9kdWN0SW1hZ2VzLzdjLzkvUTE0MzMwNDEtMS5qcGc.webp"
+ },
+ {
+  "id": "chaudfontaine-blauw-03020240106050",
+  "sourceId": 2341,
+  "title": "Chaudfontaine blauw",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Chaudfontaine",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "6 × 50 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 400
+   }
+  ],
+  "available": true,
+  "image": "single/2341.webp",
+  "sku": "03020240106050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://drinkssupply.be/wp-content/uploads/2020/11/chaudfontaine-plat-50cl-PET-goedkoopdrank.jpg"
+ },
+ {
+  "id": "chaudfontaine-rood-03020240206050",
+  "sourceId": 2346,
+  "title": "Chaudfontaine rood",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Chaudfontaine",
+  "kind": "Waters",
+  "packType": "Pack",
+  "label": "6 × 50 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 450
+   }
+  ],
+  "available": true,
+  "image": "single/2346.webp",
+  "sku": "03020240206050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/55de06e0-1908-11ef-9b69-02cc60c61b69.jpg?v=1730736732"
+ },
+ {
+  "id": "ordal-plat-water-03030380106100",
+  "sourceId": 2982,
+  "title": "Ordal plat water",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Ordal",
+  "kind": "Waters",
+  "packType": "Bak",
+  "label": "Bak · 6 × 1 L",
+  "packs": [
+   {
+    "units": 6,
+    "price": 650
+   }
+  ],
+  "available": true,
+  "image": "single/2982.webp",
+  "sku": "03030380106100",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://ordal.be/content/uploads/2025/01/10-1111x788.png"
+ },
+ {
+  "id": "ordal-bruiswater-03030380212100",
+  "sourceId": 3803,
+  "title": "Ordal bruiswater",
+  "categories": [
+   "Waters"
+  ],
+  "brand": "Ordal",
+  "kind": "Waters",
+  "packType": "Bak",
+  "label": "Bak · 12 × 1 L",
+  "packs": [
+   {
+    "units": 12,
+    "price": 650
+   }
+  ],
+  "available": true,
+  "image": "single/3803.webp",
+  "sku": "03030380212100",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://ordal.be/content/uploads/2025/02/Bruis-1L-1111x788.png"
+ },
+ {
+  "id": "varesa-sinaasappelsap-04030140101100",
+  "sourceId": 2398,
+  "title": "Varesa sinaasappelsap",
+  "categories": [
+   "Fruitsap"
+  ],
+  "brand": "Varesa",
+  "kind": "Fruitsap",
+  "packType": "Fles",
+  "label": "Fles · 1 L",
+  "packs": [
+   {
+    "units": 1,
+    "price": 250
+   }
+  ],
+  "available": true,
+  "image": "single/2398.webp",
+  "sku": "04030140101100",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://varesa.be/wp-content/uploads/2026/02/4710-VARESA-Sinaasappelsap-glas-6x1l-bak.png"
+ },
+ {
+  "id": "chocovit-05040420106050",
+  "sourceId": 2757,
+  "title": "Chocovit",
+  "categories": [
+   "Melkdrank"
+  ],
+  "brand": "Chocovit",
+  "kind": "Melkdrank",
+  "packType": "Pack",
+  "label": "6 × 50 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 1050
+   }
+  ],
+  "available": true,
+  "image": "single/2757.webp",
+  "sku": "05040420106050",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://bossdrinks.be/wp-content/uploads/2026/05/Vitalac_Chocovit_12500ML.png"
+ },
+ {
+  "id": "jupiler-5-2-06010280106033",
+  "sourceId": 2366,
+  "title": "Jupiler 5,2%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Jupiler",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 700
+   }
+  ],
+  "available": true,
+  "image": "single/2366.webp",
+  "sku": "06010280106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.webshopapp.com/shops/65337/files/475603270/325x375x2/jupiler-33cl.jpg"
+ },
+ {
+  "id": "stella-artois-5-2-06010290106033",
+  "sourceId": 3301,
+  "title": "Stella Artois 5,2%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Stella Artois",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 962
+   }
+  ],
+  "available": true,
+  "image": "single/3301.webp",
+  "sku": "06010290106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.carrefour.eu/1200_00897589_T1.webp"
+ },
+ {
+  "id": "stella-artois-0-0-06010290246033",
+  "sourceId": 3302,
+  "title": "Stella Artois 0.0%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Stella Artois",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 800
+   }
+  ],
+  "available": true,
+  "image": "single/3302.webp",
+  "sku": "06010290246033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://www.alldrinks.be/995-thickbox_default/stella-artois-00-33cl-cans.jpg"
+ },
+ {
+  "id": "duvel-06040300106033",
+  "sourceId": 2378,
+  "title": "Duvel",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Duvel",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 1000
+   }
+  ],
+  "available": true,
+  "image": "single/2378.webp",
+  "sku": "06040300106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/7b9b745a-1908-11ef-9b69-02cc60c61b69.jpg?width=650"
+ },
+ {
+  "id": "duvel-6-66-06040300206033",
+  "sourceId": 3061,
+  "title": "Duvel 6,66%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Duvel",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 950
+   }
+  ],
+  "available": true,
+  "image": "single/3061.webp",
+  "sku": "06040300206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/e08ec872-ee6e-11ee-9b69-02cc60c61b69.png?width=650"
+ },
+ {
+  "id": "leffe-blond-6-6-06040310106033",
+  "sourceId": 2294,
+  "title": "Leffe Blond 6,6%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Leffe",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "8 × 33 cl",
+  "packs": [
+   {
+    "units": 8,
+    "price": 700
+   }
+  ],
+  "available": true,
+  "image": "single/2294.webp",
+  "sku": "06040310106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/82273b07-6138-11ef-9e54-02cc60c61b69.jpg?width=650"
+ },
+ {
+  "id": "leffe-bruin-6-5-06040310206033",
+  "sourceId": 2390,
+  "title": "Leffe Bruin 6,5%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Leffe",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 900
+   }
+  ],
+  "available": true,
+  "image": "single/2390.webp",
+  "sku": "06040310206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://www.belgianbeerheaven.com/be/en/thumbnail/detail/nW47L/Leffe-Bruin-33Cl---10452-1700061689.png"
+ },
+ {
+  "id": "la-chouffe-8-06040320106033",
+  "sourceId": 2295,
+  "title": "La Chouffe 8%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "La Chouffe",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 1000
+   }
+  ],
+  "available": true,
+  "image": "single/2295.webp",
+  "sku": "06040320106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://www.belgianbeerheaven.com/be/nl/thumbnail/detail/RPVVp/La-Chouffe-33Cl---10421-1748616521.png"
+ },
+ {
+  "id": "chouffe-cherry-8-06040320204033",
+  "sourceId": 2279,
+  "title": "Chouffe Cherry 8%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "La Chouffe",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "4 × 33 cl",
+  "packs": [
+   {
+    "units": 4,
+    "price": 700
+   }
+  ],
+  "available": true,
+  "image": "single/2279.webp",
+  "sku": "06040320204033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/595bd609-1908-11ef-9b69-02cc60c61b69.jpg?width=650"
+ },
+ {
+  "id": "cornet-8-5-06040350104033",
+  "sourceId": 2413,
+  "title": "Cornet 8,5%",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Cornet",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "4 × 33 cl",
+  "packs": [
+   {
+    "units": 4,
+    "price": 600
+   }
+  ],
+  "available": true,
+  "image": "single/2413.webp",
+  "sku": "06040350104033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/4d61f06b-5f40-11ef-9e54-02cc60c61b69.jpg?width=650"
+ },
+ {
+  "id": "cornet-oaked-alcohol-free-06040350206033",
+  "sourceId": 2980,
+  "title": "Cornet Oaked Alcohol-Free",
+  "categories": [
+   "Bieren"
+  ],
+  "brand": "Cornet",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 1000
+   }
+  ],
+  "available": true,
+  "image": "single/2980.webp",
+  "sku": "06040350206033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.shopify.com/s/files/1/0834/1621/9993/files/59536607-ee48-11ee-9b69-02cc60c61b69.jpg?width=650"
+ },
+ {
+  "id": "desperados-original-06040430106033",
+  "sourceId": 3328,
+  "title": "Desperados Original",
+  "categories": [
+   "Alcohol",
+   "Bieren"
+  ],
+  "brand": "Desperados",
+  "kind": "Bieren",
+  "packType": "Pack",
+  "label": "6 × 33 cl",
+  "packs": [
+   {
+    "units": 6,
+    "price": 850
+   }
+  ],
+  "available": true,
+  "image": "single/3328.webp",
+  "sku": "06040430106033",
+  "glow": "#e9e6e1",
+  "taste": "",
+  "imageSource": "https://cdn.carrefour.eu/1200_05534360_M1_20241203.webp"
  }
 ];

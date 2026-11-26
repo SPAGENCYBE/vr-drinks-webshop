@@ -17,12 +17,17 @@ function saveCart(){try{localStorage.setItem('vrd-cart-v1',JSON.stringify(cart))
 function updateCount(){const amount=cart.reduce((s,r)=>s+r.qty,0);$('count').textContent=amount;document.querySelector('.bag').setAttribute('aria-label','Winkelwagen, '+amount+(amount===1?' verkoopeenheid':' verkoopeenheden'))}
 function meta(t,d){document.title=t+' | VR Drinks';document.querySelector('meta[name="description"]').content=d}
 function announce(t){$('status').textContent=t}
+const flagSvg={
+ BE:'<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#1a1a1a"/><rect x="1" width="1" height="2" fill="#FDDA24"/><rect x="2" width="1" height="2" fill="#EF3340"/></svg>',
+ EU:'<svg viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#003399"/>'+Array.from({length:12},(_,i)=>{const a=i*Math.PI/6,x=(1.5+.6*Math.sin(a)).toFixed(3),y=(1-.6*Math.cos(a)).toFixed(3);return '<circle cx="'+x+'" cy="'+y+'" r=".085" fill="#FFCC00"/>'}).join('')+'</svg>'};
+const originName={BE:'Belgische versie',EU:'Europese versie'};
+const flag=p=>p.origin&&flagSvg[p.origin]?'<span class="origin" title="'+originName[p.origin]+'">'+flagSvg[p.origin]+'<span class="sr">'+originName[p.origin]+'</span></span>':'';
 function photo(p, miniature=false){
  const frame='photo '+(p.wrap||p.imageSource?'single-unit':'item-'+p.sourceId)+(miniature?' miniature':'');
  const content=p.image
    ? '<img src="'+p.image+'" alt="'+(miniature?'':nameOf(p))+'" loading="lazy">'
    : '<span class="no-photo">'+(p.kind==='Waarborg'?'Leeggoed':miniature?'—':'Geen productfoto beschikbaar')+'</span>';
- return '<div class="'+frame+'">'+content+'</div>';
+ return '<div class="'+frame+'">'+content+flag(p)+'</div>';
 }
 const cartLink='<a class="primary" href="#/assortiment">Naar het assortiment</a>';
 const demo='<p class="note">Testwinkel · Assortiment en prijzen van 22 november 2026.</p>';
@@ -64,8 +69,8 @@ function assortment(){
   const query=searchText(filters.q);
   const found=catalog.filter(p=>{
    const name=department(p),sub=name==='Alcohol'?alcoholSection(p):'';
-   return (!filters.kind||filters.kind===name||filters.kind===sub)&&(!filters.brand||p.brand===filters.brand)&&(!filters.pack||p.packType===filters.pack)&&searchText([nameOf(p),p.label,p.brand,p.sku,name,sub].join(' ')).includes(query);
-  }).sort((a,b)=>alphabet.compare(sortName(a),sortName(b)));
+   return (!filters.kind||filters.kind===name||filters.kind===sub)&&(!filters.brand||p.brand===filters.brand)&&(!filters.pack||p.packType===filters.pack)&&searchText([nameOf(p),p.label,p.brand,p.sku,name,sub,p.origin||'',p.origin?originName[p.origin]:''].join(' ')).includes(query);
+  }).sort((a,b)=>alphabet.compare(sortName(a),sortName(b))||alphabet.compare(a.label,b.label)||alphabet.compare(a.origin||'',b.origin||''));
   $('resultCount').textContent=found.length+(found.length===1?' artikel':' artikelen');
   $('results').innerHTML=names.map(name=>{
    const items=found.filter(p=>department(p)===name);
