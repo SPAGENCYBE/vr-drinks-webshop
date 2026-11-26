@@ -64,10 +64,9 @@
 .storeMap.leaflet-container .leaflet-control-attribution{background:#0b090bcc;color:#a99c9e;font-size:11px}.storeMap.leaflet-container .leaflet-control-attribution a{color:#e7d9d4}
 .storeMap.leaflet-container .leaflet-bar a{background:#1d181a;color:#fff;border-color:#3a3033}.storeMap.leaflet-container .leaflet-bar a:hover{background:#2a2225}
 .vrPin{background:none;border:0}
-.vrPin .pinBody{position:absolute;left:3px;top:3px;width:52px;height:52px;border-radius:50%;background:#0b090b;box-shadow:0 0 0 3px #fff,0 6px 16px #0009;display:grid;place-items:center;transition:transform .2s;transform-origin:50% 100%}
-.vrPin .pinBody::after{content:'';position:absolute;left:50%;bottom:-11px;width:0;height:0;margin-left:-8px;border:8px solid transparent;border-top:10px solid #fff;border-bottom:0}
-.vrPin .pinBody img{width:30px;height:auto;display:block;margin-top:2px;pointer-events:none}
-.vrPin:hover .pinBody{transform:scale(1.07)}
+.vrPin .pinBody{position:absolute;left:3px;top:3px;width:50px;height:50px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#0b090b;box-shadow:0 0 0 3px #fff,0 6px 16px #0009;transition:transform .2s}
+.storeMap .leaflet-marker-pane .vrPin img{position:absolute;left:12px;top:16px;width:32px;height:auto;pointer-events:none;transition:transform .2s}
+.vrPin:hover .pinBody{transform:rotate(-45deg) scale(1.08)}.storeMap .vrPin:hover img{transform:scale(1.08)}
 .storeMap.leaflet-container .leaflet-popup-content-wrapper{border-radius:12px;background:#fff;color:#21191a}
 .storeMap .leaflet-popup-content{margin:14px 16px;min-width:210px}
 .mapPop{display:grid;gap:6px;font-size:14px;line-height:1.35}.mapPop strong{font-size:16px}
@@ -80,4 +79,4 @@
 .storeActions button,.storeActions a{display:inline-flex;align-items:center;min-height:44px;margin:0;padding:0;font:inherit;font-size:14px;line-height:1;font-weight:bold;color:#fff;text-decoration:underline;text-underline-offset:4px;background:none;border:0;cursor:pointer;-webkit-appearance:none;appearance:none}
 .storeActions button:focus-visible,.storeActions a:focus-visible{outline:2px solid #fff;outline-offset:3px}
 @media(max-width:860px){.storesLayout{grid-template-columns:1fr}.storeMap{min-height:340px}}
-@media(prefers-reduced-motion:reduce){.vrPin .pinBody{transition:none}}
+@media(prefers-reduced-motion:reduce){.vrPin .pinBody,.vrPin img{transition:none}}
