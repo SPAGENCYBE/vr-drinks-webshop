@@ -276,8 +276,8 @@
     if (q.get('bestelling')) target = '#/bestelling/' + q.get('bestelling');
     else if (q.get('reset')) target = '#/account/nieuw-wachtwoord';
     else if (q.get('login')) target = session ? '#/account' : '#/account';
+    // Na terugkeer van Mollie of een mail-link: adres opkuisen en meteen de juiste pagina tonen.
     if (q.toString()) history.replaceState(null, '', location.pathname + (target ?? location.hash));
-    if (target) location.hash = target;
-    else if (/^#\/(account|afrekenen|bestelling)/.test(location.hash)) route();
+    if (target || /^#\/(account|afrekenen|bestelling)/.test(location.hash)) route();
   })();
 })();
