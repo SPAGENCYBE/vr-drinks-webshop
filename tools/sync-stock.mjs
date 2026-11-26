@@ -11,6 +11,7 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const catalogFile = path.join(root, 'dist', 'catalog.js');
 const outFile = path.join(root, 'dist', 'stock.json');
+const mapFile = path.join(root, 'tools', 'onlinefact-map.json');
 const API = 'https://api.onlinefact.be';
 
 function loadCatalog() {
@@ -58,12 +59,16 @@ for (const p of products) {
   for (const k of keys) if (norm(k) && !index.has(norm(k))) index.set(norm(k), p);
 }
 
-const items = {}, missing = [];
+// Koppeltabel catalogus-id -> Onlinefact-referentie (tools/onlinefact-map.json).
+const map = fs.existsSync(mapFile) ? JSON.parse(fs.readFileSync(mapFile, 'utf8')) : {};
+const items = {}, missing = [], priceDiff = [];
 for (const c of catalog) {
-  const hit = index.get(norm(c.sku));
+  const hit = index.get(norm(map[c.id])) ?? index.get(norm(c.sku));
   if (!hit) { missing.push(`${c.sku || '(geen sku)'} · ${c.title} · ${c.label}`); continue; }
   const manage = hit.managestock === undefined ? true : [true, 1, '1', 'true', 'yes', 'Y'].includes(hit.managestock);
   const stock = num(hit.stock);
+  const ofPrice = num(hit.price_incl);
+  if (ofPrice !== null && Math.round(ofPrice * 100) !== c.packs[0].price) priceDiff.push(`${c.title} · ${c.label}: webshop ${(c.packs[0].price / 100).toFixed(2)} / Onlinefact ${ofPrice.toFixed(2)}`);
   items[c.id] = {
     stock: stock === null ? null : Math.max(0, Math.floor(stock)),
     managestock: manage && stock !== null,
@@ -71,14 +76,19 @@ for (const c of catalog) {
   };
 }
 
-fs.writeFileSync(outFile, JSON.stringify({ updated: new Date().toISOString(), items }));
+// Beveiliging: houdt Onlinefact geen voorraad bij (alles 0), dan niets als uitverkocht tonen.
+const managed = Object.values(items).filter(i => i.managestock);
+const tracked = managed.some(i => i.stock > 0);
+if (!tracked) for (const i of Object.values(items)) i.managestock = false;
+fs.writeFileSync(outFile, JSON.stringify({ updated: new Date().toISOString(), tracked, items }));
 
 const matched = Object.keys(items).length;
 const report = [
   `### Voorraad uit Onlinefact`,
   `- Producten in Onlinefact: ${products.length}`,
   `- Gekoppeld: ${matched} van ${catalog.length}`,
-  `- Uitverkocht: ${Object.values(items).filter(i => i.managestock && i.stock <= 0).length}`,
+  tracked ? `- Uitverkocht: ${Object.values(items).filter(i => i.managestock && i.stock <= 0).length}` : `- **Let op:** alle gekoppelde artikelen staan op voorraad 0 in Onlinefact. De voorraad wordt nog niet bijgehouden, dus de webshop toont niets als uitverkocht.`,
+  priceDiff.length ? `\n**Prijsverschillen (${priceDiff.length}):**\n` + priceDiff.map(m => `- ${m}`).join('\n') : '',
   missing.length ? `\n**Niet gevonden in Onlinefact (${missing.length}):**\n` + missing.map(m => `- ${m}`).join('\n') : '',
 ].join('\n');
 console.log(report);
