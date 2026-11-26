@@ -8,11 +8,6 @@
       // [dag (0 = zondag), open, dicht] in minuten
       hours: { 1: [540, 1050], 2: [540, 1050], 3: [540, 1050], 4: [540, 1050], 5: [540, 1050], 6: [540, 990] },
     },
-    overmere: {
-      name: 'Overmere', lat: 51.0560852, lng: 3.9762957,
-      address: 'Heikantstraat 39, 9290 Overmere',
-      hours: { 1: [540, 1020], 2: [540, 1020], 3: [540, 1020], 4: [540, 1020], 5: [540, 1020], 6: [540, 1020] },
-    },
   };
   const PHONE = '+32465070556', PHONE_LABEL = '0465 07 05 56';
   const DAYS = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
@@ -84,7 +79,8 @@
       markers[id] = L.marker([s.lat, s.lng], { icon, title: 'VR Drinks ' + s.name, alt: 'VR Drinks ' + s.name, riseOnHover: true })
         .addTo(map).bindPopup(popup(id)).on('click', () => select(id, false));
     }
-    map.fitBounds(L.latLngBounds(Object.values(STORES).map(s => [s.lat, s.lng])), { padding: [60, 60] });
+    map.setView([STORES.baasrode.lat, STORES.baasrode.lng], 14);
+    markers.baasrode.openPopup();
     // Scrollen in de pagina niet kapen: zoomen met het muiswiel pas na een klik op de kaart.
     map.on('click focus', () => map.scrollWheelZoom.enable());
     map.on('mouseout blur', () => map.scrollWheelZoom.disable());

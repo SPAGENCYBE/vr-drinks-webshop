@@ -109,7 +109,7 @@ function route(){const parts=location.hash.slice(1).split('/').filter(Boolean),w
  home=false;
  const front=!parts.length||parts[0]==='winkels';$('landing').hidden=!front;
  if(was&&!home)storedY=scrollY;document.body.classList.toggle('home',home);$('home').hidden=!home;$('shop').hidden=home;
- if(front){cancelAnimationFrame(frame);frame=0;$('shop').hidden=true;meta('Drank voor elk moment.','Ontdek VR Drinks en bekijk de adressen en openingsuren van Baasrode en Overmere.');if(parts[0]==='winkels')requestAnimationFrame(()=>$('winkels').scrollIntoView());else window.scrollTo(0,0);if(!window.VR_HERO_EL){window.VR_HERO_EL=document.querySelector('.vh');import('./hero/vr-hero.js?v=splash9').catch(()=>{})}return}
+ if(front){cancelAnimationFrame(frame);frame=0;$('shop').hidden=true;meta('Drank voor elk moment.','Ontdek VR Drinks en bekijk de adres en de openingsuren van de winkel in Baasrode.');if(parts[0]==='winkels')requestAnimationFrame(()=>$('winkels').scrollIntoView());else window.scrollTo(0,0);if(!window.VR_HERO_EL){window.VR_HERO_EL=document.querySelector('.vh');import('./hero/vr-hero.js?v=splash9').catch(()=>{})}return}
  if(home){meta('Drankenwinkel','Ontdek Coca-Cola, Fanta en Sprite in de interactieve drankenwinkel van VR Drinks.');window.scrollTo(0,storedY);start()}
  else{cancelAnimationFrame(frame);frame=0;window.scrollTo(0,0);
  if(parts[0]==='assortiment'){
