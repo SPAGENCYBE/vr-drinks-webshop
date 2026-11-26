@@ -2,6 +2,8 @@ name: Publiceer op GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '*/10 * * * *'   # voorraad uit Onlinefact elke 10 minuten
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,11 +15,21 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      ONLINEFACT_API_KEY: ${{ secrets.ONLINEFACT_API_KEY }}
+      ONLINEFACT_API_SECRET: ${{ secrets.ONLINEFACT_API_SECRET }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Voorraad ophalen uit Onlinefact
+        if: env.ONLINEFACT_API_KEY != ''
+        continue-on-error: true
+        run: node tools/sync-stock.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

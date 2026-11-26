@@ -1,0 +1,80 @@
+// Haalt de voorraad op uit Onlinefact en schrijft dist/stock.json.
+// Koppeling: catalogusveld `sku` = Onlinefact `reference` (of reference2 / barcode).
+//
+// Nodig (GitHub Secrets of omgevingsvariabelen):
+//   ONLINEFACT_API_KEY, ONLINEFACT_API_SECRET
+// Lokaal testen zonder Onlinefact: ONLINEFACT_MOCK=pad/naar/producten.json
+import fs from 'node:fs';
+import vm from 'node:vm';
+import path from 'node:path';
+
+const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const catalogFile = path.join(root, 'dist', 'catalog.js');
+const outFile = path.join(root, 'dist', 'stock.json');
+const API = 'https://api.onlinefact.be';
+
+function loadCatalog() {
+  const ctx = { window: {} };
+  vm.runInNewContext(fs.readFileSync(catalogFile, 'utf8'), ctx);
+  return ctx.window.catalog;
+}
+
+async function fetchProducts() {
+  if (process.env.ONLINEFACT_MOCK) return JSON.parse(fs.readFileSync(process.env.ONLINEFACT_MOCK, 'utf8'));
+  const key = process.env.ONLINEFACT_API_KEY, secret = process.env.ONLINEFACT_API_SECRET;
+  if (!key || !secret) throw new Error('ONLINEFACT_API_KEY en ONLINEFACT_API_SECRET ontbreken.');
+  const auth = 'Basic ' + Buffer.from(key + ':' + secret).toString('base64');
+  const all = [];
+  for (let page = 1; page < 100; page++) {
+    let res;
+    for (let attempt = 0; attempt < 4; attempt++) {
+      res = await fetch(`${API}/products/?limit=1000&page=${page}`, { headers: { Authorization: auth, Accept: 'application/json' } });
+      if (res.status !== 429) break;
+      await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+    }
+    if (!res.ok) throw new Error(`Onlinefact antwoordde ${res.status} op pagina ${page}: ${(await res.text()).slice(0, 300)}`);
+    const body = await res.json();
+    const items = Array.isArray(body) ? body : (body.data ?? body.products ?? body.items ?? []);
+    all.push(...items);
+    if (items.length < 1000) break;
+  }
+  return all;
+}
+
+const norm = v => String(v ?? '').trim().toUpperCase();
+const num = v => { const n = Number(String(v ?? '').replace(',', '.')); return Number.isFinite(n) ? n : null; };
+
+const catalog = loadCatalog();
+const products = await fetchProducts();
+
+const index = new Map();
+for (const p of products) {
+  const keys = [p.reference, p.reference2, p.barcode, ...(Array.isArray(p.barcodes) ? p.barcodes.map(b => b?.barcode ?? b) : [])];
+  for (const k of keys) if (norm(k) && !index.has(norm(k))) index.set(norm(k), p);
+}
+
+const items = {}, missing = [];
+for (const c of catalog) {
+  const hit = index.get(norm(c.sku));
+  if (!hit) { missing.push(`${c.sku || '(geen sku)'} · ${c.title} · ${c.label}`); continue; }
+  const manage = hit.managestock === undefined ? true : [true, 1, '1', 'true', 'yes', 'Y'].includes(hit.managestock);
+  const stock = num(hit.stock);
+  items[c.id] = {
+    stock: stock === null ? null : Math.max(0, Math.floor(stock)),
+    managestock: manage && stock !== null,
+    endoflife: [true, 1, '1', 'true'].includes(hit.endoflife),
+  };
+}
+
+fs.writeFileSync(outFile, JSON.stringify({ updated: new Date().toISOString(), items }));
+
+const matched = Object.keys(items).length;
+const report = [
+  `### Voorraad uit Onlinefact`,
+  `- Producten in Onlinefact: ${products.length}`,
+  `- Gekoppeld: ${matched} van ${catalog.length}`,
+  `- Uitverkocht: ${Object.values(items).filter(i => i.managestock && i.stock <= 0).length}`,
+  missing.length ? `\n**Niet gevonden in Onlinefact (${missing.length}):**\n` + missing.map(m => `- ${m}`).join('\n') : '',
+].join('\n');
+console.log(report);
+if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, report + '\n');

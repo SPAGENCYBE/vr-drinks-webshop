@@ -77,3 +77,5 @@
 
 .settled :is(.splashSide,.splashBase){animation:none}
 .settled .fallingPack{animation:packIdle 3.1s infinite alternate ease-in-out}
+
+.stock{margin:0;font-size:14px;font-weight:bold;color:#1f6b3a}.stock.low{color:#a81122}

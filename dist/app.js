@@ -10,6 +10,7 @@ const filters={q:'',brand:'',kind:'',pack:''};
 let selected=0,target=0,car=0,carVel=0,home=false,frame=0,previous=0,scrollValue=-1,scrollVel=0,scene=null,view=null,step=-1;
 let drag=null,wheelTimer,storedY=0,introStart=performance.now(),cart=[];
 try{const saved=JSON.parse(localStorage.getItem('vrd-cart-v1'));if(Array.isArray(saved))cart=saved.filter(r=>r&&Number.isInteger(r.qty)&&r.qty>0&&r.qty<=999&&byId(r.id)?.available&&byId(r.id).packs.some(b=>b.units===r.units))}catch{}
+const maxOf=p=>p.stock!=null&&p.stock>0?Math.min(999,p.stock):999;
 const priceOf=r=>byId(r.id).packs.find(b=>b.units===r.units).price;
 const subtotal=()=>cart.reduce((s,r)=>s+priceOf(r)*r.qty,0);
 function saveCart(){try{localStorage.setItem('vrd-cart-v1',JSON.stringify(cart))}catch{}updateCount()}
@@ -82,15 +83,16 @@ function detail(p){
  meta(nameOf(p)+' · '+p.label,nameOf(p)+' · '+p.label+'. Bekijk de prijs bij VR Drinks.');
  $('shop').innerHTML='<a class="crumb" href="#/assortiment">Alle dranken</a><div class="detail">'+photo(p)+'<div><div class="eyebrow">'+department(p)+'</div><h1>'+nameOf(p)+'</h1>'+(p.taste?'<p>'+p.taste+'</p>':'')+demo+'<form class="order"><label class="field">Verpakking<select id="units">'+p.packs.map(b=>'<option value="'+b.units+'">'+packName(p,b.units)+' — '+money(b.price)+'</option>').join('')+'</select></label><label class="field">Aantal verkoopeenheden<input id="qty" type="number" min="1" max="999" step="1" required value="1"></label><output class="price" id="line"></output><button class="primary">In winkelwagen</button></form></div></div>';
  if(!p.available){document.querySelector('.order').outerHTML='<p><strong>Uitverkocht</strong> · '+p.label+' · '+money(p.packs[0].price)+'</p><a class="under" href="#/assortiment">Terug naar het assortiment</a>';return}
+ const max=maxOf(p);$('qty').max=max;if(p.stock!=null)document.querySelector('.order').insertAdjacentHTML('afterbegin','<p class="stock'+(p.stock<=5?' low':'')+'">'+(p.stock<=5?'Nog '+p.stock+' beschikbaar':'Op voorraad')+'</p>');
  const b=()=>p.packs.find(b=>b.units===+$('units').value);
- function refresh(){$('line').textContent=$('qty').validity.valid?'Totaal '+money(b().price*+$('qty').value):'Vul een aantal van 1 tot 999 in.'}
- const form=document.querySelector('.order');form.oninput=refresh;refresh();form.onsubmit=e=>{e.preventDefault();const units=b().units,qty=+$('qty').value,existing=cart.find(r=>r.id===p.id&&r.units===units);if(existing&&existing.qty+qty>999){$('line').textContent='Maximaal 999 per verkoopeenheid.';return}if(existing)existing.qty+=qty;else cart.push({id:p.id,units,qty});saveCart();announce('Toegevoegd aan de winkelwagen');location.hash='/winkelwagen'}
+ function refresh(){$('line').textContent=$('qty').validity.valid?'Totaal '+money(b().price*+$('qty').value):'Vul een aantal van 1 tot '+max+' in.'}
+ const form=document.querySelector('.order');form.oninput=refresh;refresh();form.onsubmit=e=>{e.preventDefault();const units=b().units,qty=+$('qty').value,existing=cart.find(r=>r.id===p.id&&r.units===units);if((existing?existing.qty:0)+qty>max){$('line').textContent=max<999?'Er zijn nog maar '+max+' beschikbaar.':'Maximaal 999 per verkoopeenheid.';return}if(existing)existing.qty+=qty;else cart.push({id:p.id,units,qty});saveCart();announce('Toegevoegd aan de winkelwagen');location.hash='/winkelwagen'}
 }
 function basket(checkout=false){
  meta(checkout?'Afrekenen (demo)':'Winkelwagen',checkout?'Controleer je selectie in de VR Drinks-democheckout.':'Bekijk de verpakkingen en aantallen in je VR Drinks-winkelwagen.');
  $('shop').innerHTML='<h1>'+(checkout?'Afrekenen (demo)':'Winkelwagen')+'</h1>'+demo;
  if(!cart.length){$('shop').innerHTML+='<p class="empty">Je winkelwagen is leeg.</p>'+cartLink;return}
- const rows=cart.map((r,i)=>{const p=byId(r.id);return '<div class="row">'+photo(p,true)+'<div class="desc"><a href="'+productUrl(p)+'"><strong>'+nameOf(p)+'</strong></a><p>'+packName(p,r.units)+' · '+money(priceOf(r))+'</p></div>'+(checkout?'<span>'+r.qty+' ×</span>':'<label>Aantal <input data-qty="'+i+'" aria-label="Aantal '+nameOf(p)+' '+packName(p,r.units)+'" type="number" min="1" max="999" value="'+r.qty+'"></label>')+'<b>'+money(r.qty*priceOf(r))+'</b>'+(checkout?'':'<button data-remove="'+i+'">Verwijder</button>')+'</div>'}).join('');
+ const rows=cart.map((r,i)=>{const p=byId(r.id);return '<div class="row">'+photo(p,true)+'<div class="desc"><a href="'+productUrl(p)+'"><strong>'+nameOf(p)+'</strong></a><p>'+packName(p,r.units)+' · '+money(priceOf(r))+'</p></div>'+(checkout?'<span>'+r.qty+' ×</span>':'<label>Aantal <input data-qty="'+i+'" aria-label="Aantal '+nameOf(p)+' '+packName(p,r.units)+'" type="number" min="1" max="'+maxOf(p)+'" value="'+r.qty+'"></label>')+'<b>'+money(r.qty*priceOf(r))+'</b>'+(checkout?'':'<button data-remove="'+i+'">Verwijder</button>')+'</div>'}).join('');
  $('shop').innerHTML+=rows+'<div class="summary"><strong class="price">Producttotaal '+money(subtotal())+'</strong>'+(checkout?'<p>Dit is het einde van de testbestelling. Betaling en verzending zijn uitgeschakeld.</p><a class="pill" href="#/winkelwagen">Terug naar de winkelwagen</a>':'<a class="primary" href="#/afrekenen">Afrekenen</a><a class="under" href="#/assortiment">Verder winkelen</a>')+'</div>';
  $('shop').querySelectorAll('[data-qty]').forEach(el=>el.onchange=()=>{const i=+el.dataset.qty;if(!el.checkValidity()){el.reportValidity();el.value=cart[i].qty;return}cart[i].qty=+el.value;saveCart();basket();$('shop').querySelector('[data-qty="'+i+'"]').focus()});
  $('shop').querySelectorAll('[data-remove]').forEach(el=>el.onclick=()=>{cart.splice(+el.dataset.remove,1);saveCart();basket();$('shop').querySelector('button,a')?.focus()});
@@ -178,6 +180,11 @@ function tick(now){frame=0;if(!home||document.hidden)return;const dt=Math.min(.0
 function start(){if(!frame&&!document.hidden){previous=performance.now();frame=requestAnimationFrame(tick)}}
 document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0}else if(home)start()});
 window.addEventListener('hashchange',route);heroText(0,0);updateCount();route();
+async function loadStock(){try{const r=await fetch('stock.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const data=await r.json();
+ for(const p of catalog){const it=data.items&&data.items[p.id];if(!it||!it.managestock)continue;p.stock=it.stock;p.available=it.stock>0}
+ cart=cart.filter(r=>byId(r.id)&&byId(r.id).available);cart.forEach(r=>{const m=maxOf(byId(r.id));if(r.qty>m)r.qty=m});saveCart();
+ if(!home&&/^#\/(assortiment|product|winkelwagen|afrekenen)/.test(location.hash)){const y=scrollY;route();scrollTo(0,y)}}catch{}}
+loadStock();
 function loadScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=reject;document.head.append(s)})}
 async function loadScene(){try{await loadScript('three.min.js');await Promise.all([loadScript('impact.js?v=3'),loadScript('scene.js?v=impact3')]);scene=await window.createStudio(gl);fallback.hidden=true;gl.addEventListener('webglcontextlost',e=>{e.preventDefault();scene=null;fallback.hidden=false;gl.style.opacity=0});}catch{scene=null;fallback.hidden=false}}
 if(home)requestAnimationFrame(()=>setTimeout(loadScene,0));else window.addEventListener('hashchange',function init(){if(home){window.removeEventListener('hashchange',init);loadScene()}});
