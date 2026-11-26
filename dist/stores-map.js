@@ -74,7 +74,7 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
     map.attributionControl.setPrefix(false);
-    const icon = L.divIcon({ className: 'vrPin', html: '<span>VR</span>', iconSize: [44, 52], iconAnchor: [22, 50], popupAnchor: [0, -46] });
+    const icon = L.divIcon({ className: 'vrPin', html: '<span class="pinBody"></span><img src="vr-mark.svg" alt="">', iconSize: [56, 64], iconAnchor: [28, 62], popupAnchor: [0, -58] });
     for (const [id, s] of Object.entries(STORES)) {
       markers[id] = L.marker([s.lat, s.lng], { icon, title: 'VR Drinks ' + s.name, alt: 'VR Drinks ' + s.name, riseOnHover: true })
         .addTo(map).bindPopup(popup(id)).on('click', () => select(id, false));

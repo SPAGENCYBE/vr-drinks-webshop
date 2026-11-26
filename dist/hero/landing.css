@@ -64,10 +64,9 @@
 .storeMap.leaflet-container .leaflet-control-attribution{background:#0b090bcc;color:#a99c9e;font-size:11px}.storeMap.leaflet-container .leaflet-control-attribution a{color:#e7d9d4}
 .storeMap.leaflet-container .leaflet-bar a{background:#1d181a;color:#fff;border-color:#3a3033}.storeMap.leaflet-container .leaflet-bar a:hover{background:#2a2225}
 .vrPin{background:none;border:0}
-.vrPin span{display:grid;place-items:center;width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--red,#a81122);box-shadow:0 0 0 3px #fff,0 6px 16px #0008;transition:transform .2s}
-.vrPin span::before{content:'VR';transform:rotate(45deg);font:800 15px/1 Compact,Impact,sans-serif;color:#fff;letter-spacing:.02em}
-.vrPin span{font-size:0}
-.vrPin:hover span{transform:rotate(-45deg) scale(1.08)}
+.vrPin .pinBody{position:absolute;left:3px;top:0;width:50px;height:50px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#0b090b;box-shadow:0 0 0 3px #fff,0 6px 16px #0009;transition:transform .2s}
+.vrPin img{position:absolute;left:10px;top:11px;width:34px;height:auto;pointer-events:none;transition:transform .2s}
+.vrPin:hover .pinBody{transform:rotate(-45deg) scale(1.08)}.vrPin:hover img{transform:scale(1.08)}
 .storeMap.leaflet-container .leaflet-popup-content-wrapper{border-radius:12px;background:#fff;color:#21191a}
 .storeMap .leaflet-popup-content{margin:14px 16px;min-width:210px}
 .mapPop{display:grid;gap:6px;font-size:14px;line-height:1.35}.mapPop strong{font-size:16px}
@@ -76,8 +75,8 @@
 .openNow{font-size:13px;font-weight:bold;color:#e3a9ad}.openNow::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:1px}
 .openNow.is-open{color:#7ed39b}.mapPop .openNow{color:#a81122}.mapPop .openNow.is-open{color:#1f7a3f}
 .storeGrid article{transition:border-color .2s}.storeGrid article.active{border-top-color:var(--red,#a81122)}
-.storeActions{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
-.storeActions button,.storeActions a{font:inherit;font-size:14px;font-weight:bold;color:#fff;text-decoration:underline;text-underline-offset:4px;background:none;border:0;padding:6px 0;cursor:pointer;min-height:44px}
+.storeActions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:18px}
+.storeActions button,.storeActions a{display:inline-flex;align-items:center;min-height:44px;margin:0;padding:0;font:inherit;font-size:14px;line-height:1;font-weight:bold;color:#fff;text-decoration:underline;text-underline-offset:4px;background:none;border:0;cursor:pointer;-webkit-appearance:none;appearance:none}
 .storeActions button:focus-visible,.storeActions a:focus-visible{outline:2px solid #fff;outline-offset:3px}
 @media(max-width:860px){.storesLayout{grid-template-columns:1fr}.storeMap{min-height:340px}}
-@media(prefers-reduced-motion:reduce){.vrPin span{transition:none}}
+@media(prefers-reduced-motion:reduce){.vrPin .pinBody,.vrPin img{transition:none}}
